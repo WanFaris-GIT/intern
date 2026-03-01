@@ -126,7 +126,7 @@ function Company() {
 
       {/* SERVICES */}
       <div className="max-w-6xl mx-auto mb-20 text-center">
-        <h3 className="font-bold text-2xl mb-12 text-purple-700">
+        <h3 className="font-bold text-2xl mb-12 text-black">
           Our Services
         </h3>
 

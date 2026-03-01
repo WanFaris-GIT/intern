@@ -39,10 +39,10 @@ function Footer() {
           <h3 className="font-semibold text-lg mb-4">Contact</h3>
           <div className="space-y-3 text-sm text-purple-100">
             <a href="mailto:wanfaris3235@gmail.com" className="flex gap-2">
-              <FaEnvelope /> Email
+              <FaEnvelope /> wanfaris3235@gmail.com
             </a>
-            <a href="#" className="flex gap-2"><FaTiktok /> TikTok</a>
-            <a href="#" className="flex gap-2"><FaInstagram /> Instagram</a>
+            <a href="#" className="flex gap-2"><FaTiktok /> _.wanfaris</a>
+            <a href="#" className="flex gap-2"><FaInstagram /> _.wanfaris</a>
           </div>
         </div>
 
