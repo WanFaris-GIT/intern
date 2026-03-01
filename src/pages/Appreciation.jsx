@@ -1,6 +1,8 @@
 function Appreciation() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-purple-100 via-white to-purple-50 py-20 px-6">
+    <div className="min-h-screen bg-gradient-to-br from-purple-200 via-purple-100 to-white py-20 px-6 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-72 h-72 bg-purple-300 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-pink-300 rounded-full blur-3xl opacity-30 animate-pulse"></div>
 
       {/* BLUR BACKGROUND */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-purple-300 rounded-full blur-3xl opacity-30 animate-pulse"></div>

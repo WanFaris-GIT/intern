@@ -1,5 +1,5 @@
 import React from "react";
-import TrainingImg from "../images/intern.jpg"; // pastikan gambar ada dalam folder images
+import TrainingImg from "../images/intern.jpg";
 
 function Introduction() {
   const importancePoints = [
@@ -22,12 +22,17 @@ function Introduction() {
   ];
 
   return (
-    <section className="flex flex-col items-center px-6 py-20 bg-gradient-to-br from-purple-50 via-white to-purple-50 min-h-[calc(100vh-64px)]">
+    
+    <section className="flex flex-col items-center px-6 py-20 bg-gradient-to-br from-purple-200 via-purple-100 to-white min-h-[calc(100vh-64px)] relative overflow-hidden">
 
       {/* BLUR BACKGROUND */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-purple-300 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-pink-300 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-      
+      <div className="absolute top-0 left-0 w-72 h-72 bg-purple-300 rounded-full blur-3xl opacity-40 animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-300 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute top-1/3 right-0 w-80 h-80 bg-fuchsia-300 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-1/3 left-0 w-80 h-80 bg-indigo-300 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute top-2/3 left-1/3 w-64 h-64 bg-pink-200 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute top-10 right-1/3 w-56 h-56 bg-purple-400 rounded-full blur-3xl opacity-15 animate-pulse"></div>
+
       {/* Header */}
       <div className="text-center mb-16 max-w-3xl">
         <h1 className="text-2xl md:text-5xl font-extrabold text-purple-700 mb-20 text-center drop-shadow-lg">
