@@ -40,12 +40,12 @@ function Home() {
             <img
               src={ProfilePic}
               alt="Profile"
-              className="w-72 h-72 rounded-full object-cover border-4 border-blue-400 shadow-lg hover:scale-105 transition"
+              className="w-72 h-72 rounded-full object-cover border-4 border-blue-600 shadow-lg hover:scale-105 transition"
             />
 
             <div className="flex-1 space-y-3 text-gray-700 font-semibold">
 
-              <h2 className="text-xl md:text-2xl font-bold text-blue-700">
+              <h2 className="text-xl md:text-2xl font-bold text-blue-700 ">
                 WAN MUHAMMAD FARIS BIN WAN ZULKIFLI
               </h2>
 

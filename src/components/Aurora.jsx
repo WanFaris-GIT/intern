@@ -61,7 +61,7 @@ const auroraStyles = `
 
 // Shared blob color — soft bright sky blue for all 4 blobs
 const BLOB_COLOR = "radial-gradient(ellipse, #93c5fd, #60a5fa)";
-const BLOB_FILTER = "blur(65px)";
+const BLOB_FILTER = "blur(90px)";
 
 function AuroraBackground() {
   return (
@@ -70,16 +70,16 @@ function AuroraBackground() {
       <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 0 }}>
 
         <div className="amoeba1 absolute top-[10%] left-[5%]"
-          style={{ width: "320px", height: "270px", background: BLOB_COLOR, filter: BLOB_FILTER, opacity: 0.55, borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }} />
+          style={{ width: "550px", height: "480px", background: BLOB_COLOR, filter: BLOB_FILTER, opacity: 0.55, borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }} />
 
         <div className="amoeba2 absolute top-[8%] right-[5%]"
-          style={{ width: "260px", height: "310px", background: BLOB_COLOR, filter: BLOB_FILTER, opacity: 0.55, borderRadius: "40% 60% 60% 40% / 70% 30% 70% 30%" }} />
+          style={{ width: "490px", height: "530px", background: BLOB_COLOR, filter: BLOB_FILTER, opacity: 0.55, borderRadius: "40% 60% 60% 40% / 70% 30% 70% 30%" }} />
 
         <div className="amoeba3 absolute bottom-[10%] left-[8%]"
-          style={{ width: "340px", height: "250px", background: BLOB_COLOR, filter: BLOB_FILTER, opacity: 0.55, borderRadius: "70% 30% 50% 50% / 40% 60% 40% 60%" }} />
+          style={{ width: "570px", height: "460px", background: BLOB_COLOR, filter: BLOB_FILTER, opacity: 0.55, borderRadius: "70% 30% 50% 50% / 40% 60% 40% 60%" }} />
 
         <div className="amoeba4 absolute bottom-[8%] right-[5%]"
-          style={{ width: "280px", height: "290px", background: BLOB_COLOR, filter: BLOB_FILTER, opacity: 0.55, borderRadius: "50% 50% 40% 60% / 60% 40% 60% 40%" }} />
+          style={{ width: "510px", height: "520px", background: BLOB_COLOR, filter: BLOB_FILTER, opacity: 0.55, borderRadius: "50% 50% 40% 60% / 60% 40% 60% 40%" }} />
 
       </div>
     </>
