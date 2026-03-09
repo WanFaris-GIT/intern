@@ -23,16 +23,20 @@ function Introduction() {
   ];
 
   return (
-    <section className="flex flex-col items-center px-6 py-20 min-h-[calc(100vh-64px)] relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)" }}>
-
+    <section
+      className="flex flex-col items-center px-6 py-20 min-h-[calc(100vh-64px)] relative overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)",
+      }}
+    >
+      {/* Aurora Background */}
       <AuroraBackground />
 
       {/* CONTENT */}
-      <div className="w-full max-w-5xl mx-auto relative" style={{ zIndex: 10 }}>
+      <div className="w-full max-w-6xl mx-auto relative" style={{ zIndex: 10 }}>
 
         {/* TITLE */}
-        <h1 className="text-2xl md:text-5xl font-extrabold text-blue-800 text-center drop-shadow-lg mb-4">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 text-center drop-shadow-lg mb-2">
           Introduction to Industrial Training
         </h1>
         <p className="text-gray-600 text-center text-base md:text-lg mb-16">
@@ -42,7 +46,16 @@ function Introduction() {
         <hr className="w-full border-t-4 border-blue-400 mb-14" />
 
         {/* Grid Layout: Image + Text */}
-        <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 md:p-12 mb-10">
+        <div className="
+          bg-white/30
+          backdrop-blur-xl
+          border border-white/40
+          shadow-2xl
+          rounded-3xl
+          p-8 md:p-12 mb-10
+          hover:shadow-xl hover:bg-white/40
+          transition duration-300
+        ">
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
             {/* Image */}
@@ -82,22 +95,25 @@ function Introduction() {
         </div>
 
         {/* Importance Section */}
-        <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 md:p-12">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-blue-800 mb-8 text-center">
-            The Importance of Industrial Training
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {importancePoints.map((point, idx) => (
-              <div
-                key={idx}
-                className="bg-blue-50 rounded-2xl p-6 shadow-inner hover:scale-105 transition-transform duration-300"
-              >
-                <h3 className="text-lg font-bold text-blue-700 mb-2">{point.title}</h3>
-                <p className="text-gray-700 text-sm md:text-base">{point.desc}</p>
-              </div>
-            ))}
-          </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          {importancePoints.map((point, idx) => (
+            <div
+              key={idx}
+              className="
+                bg-white/30
+                backdrop-blur-xl
+                border border-white/40
+                rounded-2xl
+                p-6
+                shadow-inner
+                hover:scale-105 hover:shadow-xl
+                transition-transform duration-300
+              "
+            >
+              <h3 className="text-lg font-bold text-blue-700 mb-2">{point.title}</h3>
+              <p className="text-gray-700 text-sm md:text-base">{point.desc}</p>
+            </div>
+          ))}
         </div>
 
       </div>

@@ -1,48 +1,49 @@
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
 
+/* 3D Rotating Cube Component */
 const cubeStyles = `
-  .cube-scene {
-    width: 28px;
-    height: 28px;
-    perspective: 80px;
-  }
-  .cube {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: rotateCube 4s linear infinite;
-  }
-  @keyframes rotateCube {
-    0%   { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-    100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg); }
-  }
-  .cube__face {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    border: 1.5px solid rgba(96, 165, 250, 0.8);
-    background: rgba(59, 130, 246, 0.08);
-    backdrop-filter: blur(2px);
-  }
-  .cube__face--front  { transform: rotateY(  0deg) translateZ(14px); }
-  .cube__face--back   { transform: rotateY(180deg) translateZ(14px); }
-  .cube__face--right  { transform: rotateY( 90deg) translateZ(14px); }
-  .cube__face--left   { transform: rotateY(-90deg) translateZ(14px); }
-  .cube__face--top    { transform: rotateX( 90deg) translateZ(14px); }
-  .cube__face--bottom { transform: rotateX(-90deg) translateZ(14px); }
-
-  /* Glowing dot on each corner */
-  .cube__face::before {
-    content: '';
-    position: absolute;
-    top: 2px; left: 2px;
-    width: 3px; height: 3px;
-    background: #60a5fa;
-    border-radius: 50%;
-    box-shadow: 0 0 4px #60a5fa, 20px 0 4px #60a5fa, 0 20px 4px #60a5fa, 20px 20px 4px #60a5fa;
-  }
+.cube-scene {
+  width: 28px;
+  height: 28px;
+  perspective: 80px;
+}
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 4s linear infinite;
+}
+@keyframes rotateCube {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg); }
+}
+.cube__face {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid rgba(96, 165, 250, 0.8);
+  background: rgba(59, 130, 246, 0.08);
+  backdrop-filter: blur(2px);
+}
+.cube__face--front { transform: rotateY(0deg) translateZ(14px); }
+.cube__face--back { transform: rotateY(180deg) translateZ(14px); }
+.cube__face--right { transform: rotateY(90deg) translateZ(14px); }
+.cube__face--left { transform: rotateY(-90deg) translateZ(14px); }
+.cube__face--top { transform: rotateX(90deg) translateZ(14px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(14px); }
+.cube__face::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 3px;
+  height: 3px;
+  background: #60a5fa;
+  border-radius: 50%;
+  box-shadow: 0 0 4px #60a5fa, 20px 0 4px #60a5fa, 0 20px 4px #60a5fa, 20px 20px 4px #60a5fa;
+}
 `;
 
 function RotatingCube() {
@@ -63,11 +64,13 @@ function RotatingCube() {
   );
 }
 
+/* Navbar Component */
 function Navbar() {
   const [reportOpen, setReportOpen] = useState(false);
   const dropdownRef = useRef(null);
   const location = useLocation();
 
+  /* Close dropdown if clicked outside */
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -78,32 +81,31 @@ function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  /* Close dropdown if navigating away from report pages, only if dropdown open */
   useEffect(() => {
     if (location.pathname !== "/weekly" && location.pathname !== "/technical") {
-      setReportOpen(false);
+      const timeout = setTimeout(() => setReportOpen(false), 0);
+      return () => clearTimeout(timeout);
     }
   }, [location.pathname]);
 
   const isReportActive =
     location.pathname === "/weekly" || location.pathname === "/technical";
 
+  /* NavLink class helper */
   const linkClass = ({ isActive }) =>
-    `relative px-3 py-2 font-medium transition-colors duration-300 cursor-pointer
-    ${
+    `relative px-3 py-2 font-medium transition-colors duration-300 cursor-pointer ${
       reportOpen
         ? "text-blue-700 after:w-0"
         : isActive
         ? "text-blue-700 after:w-full"
         : "text-gray-600 hover:text-blue-700 after:w-0"
-    }
-    after:content-[''] after:absolute after:left-0 after:-bottom-1
-    after:h-[3px] after:bg-blue-700 after:rounded-full after:transition-all after:duration-300`;
+    } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[3px] after:bg-blue-700 after:rounded-full after:transition-all after:duration-300`;
 
   return (
     <nav className="h-16 bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center h-full px-6">
-
-        {/* LOGO + 3D CUBE */}
+        {/* Logo + Cube */}
         <div className="flex items-center gap-3">
           <RotatingCube />
           <h1 className="text-2xl font-extrabold text-blue-700 tracking-wide">
@@ -111,24 +113,30 @@ function Navbar() {
           </h1>
         </div>
 
+        {/* Links */}
         <div className="flex items-center space-x-6 relative">
-          <NavLink to="/" className={linkClass}>Home</NavLink>
-          <NavLink to="/appreciation" className={linkClass}>Appreciation</NavLink>
-          <NavLink to="/introduction" className={linkClass}>Introduction</NavLink>
-          <NavLink to="/company" className={linkClass}>Company</NavLink>
+          <NavLink to="/" className={linkClass}>
+            Home
+          </NavLink>
+          <NavLink to="/appreciation" className={linkClass}>
+            Appreciation
+          </NavLink>
+          <NavLink to="/introduction" className={linkClass}>
+            Introduction
+          </NavLink>
+          <NavLink to="/company" className={linkClass}>
+            Company
+          </NavLink>
 
-          {/* REPORT DROPDOWN */}
+          {/* Report Dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button
-              onClick={() => setReportOpen(!reportOpen)}
-              className={`relative px-3 py-2 font-medium transition-colors duration-300 flex items-center
-                ${
-                  isReportActive
-                    ? "text-blue-700 after:w-full"
-                    : "text-gray-600 hover:text-blue-700 after:w-0"
-                }
-                after:content-[''] after:absolute after:left-0 after:-bottom-1
-                after:h-[3px] after:bg-blue-700 after:rounded-full after:transition-all after:duration-300`}
+              onClick={() => setReportOpen((prev) => !prev)}
+              className={`relative px-3 py-2 font-medium transition-colors duration-300 flex items-center ${
+                isReportActive
+                  ? "text-blue-700 after:w-full"
+                  : "text-gray-600 hover:text-blue-700 after:w-0"
+              } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[3px] after:bg-blue-700 after:rounded-full after:transition-all after:duration-300`}
             >
               Report
               <span
@@ -141,8 +149,11 @@ function Navbar() {
             </button>
 
             <div
-              className={`absolute top-full left-0 mt-2 w-44 bg-white rounded-lg shadow-lg border border-blue-100 z-50 transform transition-all duration-300 origin-top
-                ${reportOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0 pointer-events-none"}`}
+              className={`absolute top-full left-0 mt-2 w-44 bg-white rounded-lg shadow-lg border border-blue-100 z-50 transform transition-all duration-300 origin-top ${
+                reportOpen
+                  ? "opacity-100 scale-y-100"
+                  : "opacity-0 scale-y-0 pointer-events-none"
+              }`}
             >
               <NavLink
                 to="/weekly"
@@ -173,8 +184,12 @@ function Navbar() {
             </div>
           </div>
 
-          <NavLink to="/conclusion" className={linkClass}>Conclusion</NavLink>
-          <NavLink to="/references" className={linkClass}>References</NavLink>
+          <NavLink to="/conclusion" className={linkClass}>
+            Conclusion
+          </NavLink>
+          <NavLink to="/references" className={linkClass}>
+            References
+          </NavLink>
         </div>
       </div>
     </nav>

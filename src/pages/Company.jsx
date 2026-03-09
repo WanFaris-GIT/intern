@@ -30,16 +30,20 @@ function Company() {
   const phone = "+6010-9056700";
 
   return (
-    <div className="min-h-screen py-20 px-6 relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)" }}>
-
+    <div
+      className="min-h-screen py-20 px-6 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)",
+      }}
+    >
+      {/* Aurora Background */}
       <AuroraBackground />
 
       {/* CONTENT */}
-      <div className="max-w-5xl mx-auto relative" style={{ zIndex: 10 }}>
+      <div className="max-w-6xl mx-auto relative" style={{ zIndex: 10 }}>
 
         {/* TITLE */}
-        <h1 className="text-2xl md:text-5xl font-extrabold text-blue-800 text-center drop-shadow-lg mb-2">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 text-center drop-shadow-lg mb-2">
           Company's Background
         </h1>
         <p className="text-gray-500 text-center text-lg mb-16">HIT Digital Marketing Sdn Bhd</p>
@@ -47,7 +51,7 @@ function Company() {
         <hr className="w-full border-t-4 border-blue-400 mb-14" />
 
         {/* INTRO CARD */}
-        <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 md:p-12 mb-10 flex flex-col md:flex-row items-center gap-8">
+        <div className="bg-white/30 backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-8 md:p-12 mb-10 flex flex-col md:flex-row items-center gap-8 hover:shadow-blue-200 transition">
           <div className="flex-shrink-0">
             <img
               src={LogoHD}
@@ -58,7 +62,7 @@ function Company() {
 
           <div className="text-center md:text-left space-y-4">
             <p className="text-gray-700 leading-relaxed">
-              Hit Digital Marketing Sdn Bhd (HD) was established in 2020 with the
+              HIT Digital Marketing Sdn Bhd (HD) was established in 2020 with the
               initiative to provide a powerful platform for businesses, educational
               institutions and NGOs in Malaysia to grow through digital marketing.
             </p>
@@ -67,20 +71,23 @@ function Company() {
               while contributing towards economic growth and community development.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mt-4">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mt-4 justify-start">
               <a
                 href={`mailto:${email}`}
-                className="flex items-center gap-2 bg-blue-700 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-blue-800 transition duration-300"
+                className="flex items-center gap-2 bg-white/30 backdrop-blur-xl border border-white/40 px-6 py-3 rounded-xl shadow-lg 
+                          hover:bg-white/40 hover:scale-105 transition duration-300"
               >
-                <FaEnvelope />
-                <span>{email}</span>
+                <FaEnvelope className="text-blue-600" />
+                <span className="text-gray-800 font-semibold">{email}</span>
               </a>
+
               <a
                 href={`tel:${phone}`}
-                className="flex items-center gap-2 bg-white text-blue-700 border border-blue-400 px-6 py-3 rounded-xl shadow-lg hover:bg-blue-700 hover:text-white transition duration-300"
+                className="flex items-center gap-2 bg-white/30 backdrop-blur-xl border border-white/40 px-6 py-3 rounded-xl shadow-lg
+                          hover:bg-white/40 hover:scale-105 transition duration-300"
               >
-                <FaPhone />
-                <span>{phone}</span>
+                <FaPhone className="text-blue-600" />
+                <span className="text-gray-800 font-semibold">{phone}</span>
               </a>
             </div>
           </div>
@@ -88,8 +95,7 @@ function Company() {
 
         {/* VISION & MISSION */}
         <div className="grid md:grid-cols-2 gap-8 mb-10">
-
-          <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 hover:-translate-y-2 transition">
+          <div className="bg-white/30 backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition">
             <FaEye className="text-blue-600 text-3xl mb-4" />
             <h3 className="font-bold text-xl text-blue-700 mb-2">Vision</h3>
             <p className="text-gray-600">
@@ -98,7 +104,7 @@ function Company() {
             </p>
           </div>
 
-          <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 hover:-translate-y-2 transition">
+          <div className="bg-white/30 backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition">
             <FaBullseye className="text-blue-600 text-3xl mb-4" />
             <h3 className="font-bold text-xl text-blue-700 mb-4">Mission</h3>
             <div className="space-y-3">
@@ -117,7 +123,7 @@ function Company() {
         </div>
 
         {/* ORGANIZATION CHART */}
-        <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 md:p-12 mb-10 text-center">
+        <div className="bg-white/30 backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-8 md:p-12 mb-10 text-center hover:shadow-2xl transition">
           <h3 className="font-bold text-xl text-blue-800 mb-6">Organization Chart</h3>
           <img
             src={HDchart}
@@ -127,7 +133,7 @@ function Company() {
         </div>
 
         {/* SERVICES */}
-        <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 md:p-12 mb-10 text-center">
+        <div className="bg-white/30 backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-8 md:p-12 mb-10 text-center hover:shadow-2xl transition">
           <h3 className="font-bold text-2xl text-blue-800 mb-8">Our Services</h3>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -135,10 +141,8 @@ function Company() {
               <div
                 key={index}
                 className="bg-gradient-to-br from-sky-600 to-blue-800 text-white p-8 rounded-3xl shadow-xl 
-                            hover:scale-105 hover:shadow-2xl transition duration-300 cursor-pointer"
+                hover:scale-105 hover:shadow-2xl transition duration-300 cursor-pointer"
               >
-
-
                 <div className="text-4xl mb-4 flex justify-center">{service.icon}</div>
                 <h4 className="font-bold text-base leading-snug">{service.title}</h4>
               </div>
@@ -147,11 +151,12 @@ function Company() {
         </div>
 
         {/* LOCATION */}
-        <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 md:p-12 text-center">
+        <div className="bg-white/30 backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-8 md:p-12 text-center hover:shadow-2xl transition">
           <FaMapMarkerAlt className="text-blue-600 text-3xl mb-4 mx-auto" />
           <h3 className="font-bold text-xl text-blue-800 mb-3">Our Location</h3>
           <p className="text-gray-600 mb-6">
-            PT 532, Tingkat 1, Seksyen 17, Lembah Sireh,<br />
+            PT 532, Tingkat 1, Seksyen 17, Lembah Sireh,
+            <br />
             15050 Kota Bharu, Kelantan, Malaysia
           </p>
 

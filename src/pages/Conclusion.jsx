@@ -2,20 +2,41 @@ import AuroraBackground from "../components/Aurora";
 
 function Conclusion() {
   return (
-    <div className="relative min-h-screen py-20 px-6 overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)" }}>
-
+    <section
+      className="relative min-h-screen py-20 px-6 overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)",
+      }}
+    >
+      {/* Aurora Animated Background */}
       <AuroraBackground />
 
-      <div className="max-w-5xl mx-auto relative" style={{ zIndex: 10 }}>
+      {/* CONTENT */}
+      <div className="max-w-6xl mx-auto relative" style={{ zIndex: 10 }}>
+        {/* Title */}
+        <div className="text-center mb-14">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 drop-shadow-lg">
+            Conclusion
+          </h1>
+          <hr className="w-full border-t-4 border-blue-400 mt-6" />
+        </div>
 
-        <h1 className="text-2xl md:text-5xl font-extrabold text-blue-800 text-center drop-shadow-lg mb-16">
-          Conclusion
-        </h1>
-
-        <hr className="w-full border-t-4 border-blue-400 mb-14" />
-
-        <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 md:p-12 border-l-8 border-blue-500 text-gray-700 space-y-6 leading-relaxed">
+        {/* Glass Card */}
+        <div
+          className="
+            bg-white/30
+            backdrop-blur-xl
+            border border-white/40
+            rounded-3xl
+            shadow-2xl
+            p-8 md:p-12
+            hover:shadow-blue-200
+            transition
+            text-gray-700
+            space-y-6
+            leading-relaxed
+          "
+        >
           <p>
             After undergoing Industrial Training at Hit Digital Marketing Sdn. Bhd., I have delved deeper into the world of work,
             gaining invaluable insights and experiences. This accomplishment instils a sense of pride and gratitude for the acquired
@@ -51,9 +72,8 @@ function Conclusion() {
             I deeply appreciate the opportunity, guidance, and support provided by the company throughout my training period.
           </p>
         </div>
-
       </div>
-    </div>
+    </section>
   );
 }
 
