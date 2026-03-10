@@ -5,6 +5,9 @@ import Logo2 from "../images/LogoHD.png";
 import Logo3 from "../images/jpkk.png";
 import { FaEnvelope, FaPhone, FaGlobe, FaMapMarkerAlt } from "react-icons/fa";
 import AuroraBackground from "../components/Aurora";
+import BlurText from "../components/BlurText";
+import GlareImage from "../components/GlareHover";
+import ShinyText from "../components/ShinyText";
 
 function Home() {
   return (
@@ -26,15 +29,20 @@ function Home() {
         {/* Title */}
 
         <div className="text-center mb-20">
-
-          <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 drop-shadow-lg">
-            FINAL REPORT OF INDUSTRIAL TRAINING
+          <h1 className="text-4xl md:text-5xl font-extrabold drop-shadow-lg">
+            <ShinyText
+              text="FINAL REPORT OF INDUSTRIAL TRAINING"
+              speed={6}
+            />
           </h1>
 
-          <h3 className="text-xl font-bold text-blue-900 mt-3">
-            SESSION 2 2025 / 2026
+          <h3 className="text-xl font-bold mt-3">
+            <ShinyText
+              text="SESSION 2 2025 / 2026"
+              speed={4}
+              className="text-blue-900"
+            />
           </h3>
-
         </div>
 
         <hr className="w-full border-t-4 border-blue-400 mb-14" />
@@ -82,16 +90,10 @@ function Home() {
 
             <div className="relative">
 
-              <img
+              <GlareImage
                 src={ProfilePic}
                 alt="Profile"
-                className="
-                w-64 h-64 rounded-full object-cover
-                border-4 border-blue-600
-                shadow-xl
-                hover:scale-105
-                transition duration-300
-              "
+                className="w-64 h-64 rounded-full object-cover border-4 border-blue-600 shadow-xl"
               />
 
               {/* Glow effect */}
@@ -105,7 +107,10 @@ function Home() {
             <div className="flex-1 space-y-4 text-gray-700 font-semibold">
 
               <h2 className="text-2xl md:text-3xl font-bold text-blue-700">
-                WAN MUHAMMAD FARIS BIN WAN ZULKIFLI
+                <BlurText
+                  text="WAN MUHAMMAD FARIS BIN WAN ZULKIFLI"
+                  delay={80}
+                />
               </h2>
 
               <p>(17DDT23F1014)</p>
