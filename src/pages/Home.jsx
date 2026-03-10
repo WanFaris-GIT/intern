@@ -140,8 +140,9 @@ function Home() {
                 </div>
 
                 <a
-                  href="mailto:sales@hitdigital.my"
-                  className={`flex items-center gap-3 text-sm hover:text-blue-700 transition ${darkMode ? 'text-gray-300' : ''}`}
+                  href="#"
+                  onClick={(e) => { e.preventDefault(); window.open('mailto:sales@hitdigital.my', '_blank'); }}
+                  className={`flex items-center gap-3 text-sm hover:text-blue-700 transition cursor-pointer ${darkMode ? 'text-gray-300' : ''}`}
                 >
 
                   <FaEnvelope className="text-blue-600" />
@@ -185,3 +186,4 @@ function Home() {
 }
 
 export default Home;
+

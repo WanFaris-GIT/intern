@@ -78,8 +78,9 @@ function Company() {
 
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mt-4 justify-start">
               <a
-                href={`mailto:${email}`}
-                className={`flex items-center gap-2 backdrop-blur-xl border px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition duration-300 ${
+                href="#"
+                onClick={(e) => { e.preventDefault(); window.open(`mailto:${email}`, '_blank'); }}
+                className={`flex items-center gap-2 backdrop-blur-xl border px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition duration-300 cursor-pointer ${
                   darkMode ? 'bg-gray-800/40 border-gray-600/40 text-gray-200' : 'bg-white/30 border-white/40 text-gray-800'
                 }`}
               >
@@ -89,7 +90,7 @@ function Company() {
 
               <a
                 href={`tel:${phone}`}
-                className={`flex items-center gap-2 backdrop-blur-xl border px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition duration-300 ${
+                className={`flex items-center gap-2 backdrop-blur-xl border px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition duration-300 cursor-pointer ${
                   darkMode ? 'bg-gray-800/40 border-gray-600/40 text-gray-200' : 'bg-white/30 border-white/40 text-gray-800'
                 }`}
               >
