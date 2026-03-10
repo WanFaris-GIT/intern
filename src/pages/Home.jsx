@@ -45,7 +45,7 @@ function Home() {
             <ShinyText
               text="SESSION 2 2025 / 2026"
               speed={4}
-              className="text-blue-900"
+              className="text-blue-700"
             />
           </h3>
         </div>
@@ -55,7 +55,7 @@ function Home() {
         {/* MAIN GLASS CARD */}
 
         <div
-          className={`backdrop-blur-xl border rounded-3xl shadow-2xl p-8 md:p-12 hover:shadow-blue-200 transition ${
+          className={`backdrop-blur-xl border rounded-3xl shadow-2xl p-8 md:p-12 hover:shadow-blue-200 transition card-glow ${
             darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/40'
           }`}
         >
@@ -104,7 +104,7 @@ function Home() {
 
             <div className={`flex-1 space-y-4 font-semibold ${darkMode ? 'text-gray-100' : 'text-gray-700'}`}>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-blue-700 dark:text-blue-300">
+              <h2 className="text-2xl md:text-3xl font-bold text-blue-700 dark:text-blue-700">
                 <BlurText
                   text="WAN MUHAMMAD FARIS BIN WAN ZULKIFLI"
                   delay={80}

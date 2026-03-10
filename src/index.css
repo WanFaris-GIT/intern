@@ -74,3 +74,25 @@ body {
     0 0 10px rgba(59, 130, 246, 0.3),
     inset 0 0 5px rgba(59, 130, 246, 0.1);
 }
+
+/* Card hover glow effect for dark mode */
+.dark .card-glow {
+  transition: all 0.3s ease;
+}
+
+.dark .card-glow:hover {
+  box-shadow: 
+    0 0 20px rgba(59, 130, 246, 0.4),
+    0 0 40px rgba(59, 130, 246, 0.2),
+    0 0 60px rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Card hover glow effect for light mode */
+.card-glow {
+  transition: all 0.3s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}

@@ -32,8 +32,8 @@ function Appreciation() {
         </h1>
 
         {/* DEDICATION CARD */}
-        <div className={`backdrop-blur-xl border rounded-3xl shadow-xl p-8 md:p-12 mb-12 hover:shadow-blue-200 transition ${darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/30'}`}>
-          <h2 className="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-6 tracking-wide">
+        <div className={`backdrop-blur-xl border rounded-3xl shadow-xl p-8 md:p-12 mb-12 hover:shadow-blue-200 transition card-glow ${darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/30'}`}>
+          <h2 className="text-2xl font-bold text-blue-700 dark:text-blue-700 mb-6 tracking-wide">
             DEDICATIONS
           </h2>
 
@@ -54,8 +54,8 @@ function Appreciation() {
         </div>
 
         {/* APPRECIATION CARD */}
-        <div className={`backdrop-blur-xl border rounded-3xl shadow-xl p-8 md:p-12 hover:shadow-indigo-200 transition ${darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/30'}`}>
-          <h2 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-6 tracking-wide">
+        <div className={`backdrop-blur-xl border rounded-3xl shadow-xl p-8 md:p-12 hover:shadow-indigo-200 transition card-glow ${darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/30'}`}>
+          <h2 className="text-2xl font-bold text-indigo-600 dark:text-indigo-700 mb-6 tracking-wide">
             APPRECIATIONS
           </h2>
 

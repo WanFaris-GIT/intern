@@ -111,7 +111,7 @@ function Navbar() {
         {/* Logo + Cube */}
         <div className="flex items-center gap-3">
           <RotatingCube />
-          <h1 className="text-2xl font-extrabold text-blue-700 dark:text-blue-400 tracking-wide">
+          <h1 className="text-2xl font-extrabold text-blue-700 dark:text-blue-700 tracking-wide">
             Internship Report
           </h1>
         </div>

@@ -48,7 +48,7 @@ function Company() {
       <div className="max-w-6xl mx-auto relative" style={{ zIndex: 10 }}>
 
         {/* TITLE */}
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 dark:text-blue-300 text-center drop-shadow-lg mb-2">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 dark:text-blue-700 text-center drop-shadow-lg mb-2">
           Company's Background
         </h1>
         <p className={`text-center text-lg mb-16 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>HIT Digital Marketing Sdn Bhd</p>
@@ -56,7 +56,7 @@ function Company() {
         <hr className="w-full border-t-4 border-blue-400 mb-14" />
 
         {/* INTRO CARD */}
-        <div className="bg-white/30 backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-8 md:p-12 mb-10 flex flex-col md:flex-row items-center gap-8 hover:shadow-blue-200 transition">
+        <div className={`backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-8 md:p-12 mb-10 flex flex-col md:flex-row items-center gap-8 hover:shadow-blue-200 transition card-glow ${darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30'}`}>
           <div className="flex-shrink-0">
             <img
               src={LogoHD}
@@ -102,22 +102,22 @@ function Company() {
 
         {/* VISION & MISSION */}
         <div className="grid md:grid-cols-2 gap-8 mb-10">
-          <div className={`backdrop-blur-xl border shadow-2xl rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition ${
+          <div className={`backdrop-blur-xl border shadow-2xl rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition card-glow ${
             darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/40'
           }`}>
             <FaEye className="text-blue-600 text-3xl mb-4" />
-            <h3 className="font-bold text-xl text-blue-700 dark:text-blue-300 mb-2">Vision</h3>
+            <h3 className="font-bold text-xl text-blue-700 dark:text-blue-700 mb-2">Vision</h3>
             <p className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
               Empowering economies, communities, and education through globally
               impactful digital marketing.
             </p>
           </div>
 
-          <div className={`backdrop-blur-xl border shadow-2xl rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition ${
+          <div className={`backdrop-blur-xl border shadow-2xl rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition card-glow ${
             darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/40'
           }`}>
             <FaBullseye className="text-blue-600 text-3xl mb-4" />
-            <h3 className="font-bold text-xl text-blue-700 dark:text-blue-300 mb-4">Mission</h3>
+            <h3 className="font-bold text-xl text-blue-700 dark:text-blue-700 mb-4">Mission</h3>
             <div className="space-y-3">
               {[
                 "Generating multiple active income streams.",
@@ -134,10 +134,10 @@ function Company() {
         </div>
 
         {/* ORGANIZATION CHART */}
-        <div className={`backdrop-blur-xl border shadow-2xl rounded-3xl p-8 md:p-12 mb-10 text-center hover:shadow-2xl transition ${
+        <div className={`backdrop-blur-xl border shadow-2xl rounded-3xl p-8 md:p-12 mb-10 text-center hover:shadow-2xl transition card-glow ${
           darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/40'
         }`}>
-          <h3 className="font-bold text-xl text-blue-800 dark:text-blue-300 mb-6">Organization Chart</h3>
+          <h3 className="font-bold text-xl text-blue-800 dark:text-blue-700 mb-6">Organization Chart</h3>
           <img
             src={HDchart}
             alt="Organization Chart"
@@ -146,10 +146,10 @@ function Company() {
         </div>
 
         {/* SERVICES */}
-        <div className={`backdrop-blur-xl border shadow-2xl rounded-3xl p-8 md:p-12 mb-10 text-center hover:shadow-2xl transition ${
+        <div className={`backdrop-blur-xl border shadow-2xl rounded-3xl p-8 md:p-12 mb-10 text-center hover:shadow-2xl transition card-glow ${
           darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/40'
         }`}>
-          <h3 className="font-bold text-2xl text-blue-800 dark:text-blue-300 mb-8">Our Services</h3>
+          <h3 className="font-bold text-2xl text-blue-800 dark:text-blue-700 mb-8">Services</h3>
 
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service, index) => (
@@ -166,11 +166,11 @@ function Company() {
         </div>
 
         {/* LOCATION */}
-        <div className={`backdrop-blur-xl border shadow-2xl rounded-3xl p-8 md:p-12 text-center hover:shadow-2xl transition ${
+        <div className={`backdrop-blur-xl border shadow-2xl rounded-3xl p-8 md:p-12 text-center hover:shadow-2xl transition card-glow ${
           darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/40'
         }`}>
           <FaMapMarkerAlt className="text-blue-600 text-3xl mb-4 mx-auto" />
-          <h3 className="font-bold text-xl text-blue-800 dark:text-blue-300 mb-3">Our Location</h3>
+          <h3 className="font-bold text-xl text-blue-800 dark:text-blue-700 mb-3">Our Location</h3>
           <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             PT 532, Tingkat 1, Seksyen 17, Lembah Sireh,
             <br />
