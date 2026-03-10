@@ -1,3 +1,4 @@
+import { useDarkMode } from "../context/DarkModeContext";
 import { Link } from "react-router-dom";
 import {
   FaEnvelope,
@@ -7,11 +8,13 @@ import {
 } from "react-icons/fa";
 
 function Footer() {
+  const { darkMode } = useDarkMode();
+  
   return (
     <footer className="relative text-white">
 
       {/* Base gradient - match Home's blue/indigo theme */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-800 via-indigo-700 to-blue-900"></div>
+      <div className={`absolute inset-0 ${darkMode ? 'bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900' : 'bg-gradient-to-r from-blue-800 via-indigo-700 to-blue-900'}`}></div>
 
       {/* Decorative blobs - sama macam Home */}
       <div className="absolute top-0 left-1/4 w-72 h-72 bg-blue-400 rounded-full blur-3xl opacity-20"></div>
@@ -61,3 +64,4 @@ function Footer() {
 }
 
 export default Footer;
+

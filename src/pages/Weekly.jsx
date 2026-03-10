@@ -1,8 +1,10 @@
+import { useDarkMode } from "../context/DarkModeContext";
 import { Link } from "react-router-dom";
 import AuroraBackground from "../components/Aurora";
 import { FiClipboard } from "react-icons/fi";
 
 function Weekly() {
+  const { darkMode } = useDarkMode();
 
   const totalWeeks = 20;
 
@@ -15,7 +17,9 @@ function Weekly() {
       className="relative flex flex-col justify-center flex-grow px-6 py-20 overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)"
+          darkMode 
+            ? "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)"
+            : "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)"
       }}
     >
 

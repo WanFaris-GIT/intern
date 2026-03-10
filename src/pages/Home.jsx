@@ -1,4 +1,5 @@
 import React from "react";
+import { useDarkMode } from "../context/DarkModeContext";
 import ProfilePic from "../images/Me.jpeg";
 import Logo1 from "../images/psis.png";
 import Logo2 from "../images/LogoHD.png";
@@ -10,12 +11,16 @@ import GlareImage from "../components/GlareHover";
 import ShinyText from "../components/ShinyText";
 
 function Home() {
+  const { darkMode } = useDarkMode();
+  
   return (
     <section
       className="relative flex flex-col justify-center flex-grow px-6 py-20 overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)",
+          darkMode 
+            ? "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)"
+            : "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)",
       }}
     >
       {/* Aurora Background */}

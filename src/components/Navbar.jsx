@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { useDarkMode } from "../context/DarkModeContext";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 /* 3D Rotating Cube Component */
 const cubeStyles = `
@@ -69,6 +71,7 @@ function Navbar() {
   const [reportOpen, setReportOpen] = useState(false);
   const dropdownRef = useRef(null);
   const location = useLocation();
+  const { darkMode, toggleDarkMode } = useDarkMode();
 
   /* Close dropdown if clicked outside */
   useEffect(() => {
@@ -99,16 +102,16 @@ function Navbar() {
         ? "text-blue-700 after:w-0"
         : isActive
         ? "text-blue-700 after:w-full"
-        : "text-gray-600 hover:text-blue-700 after:w-0"
+        : darkMode ? "text-gray-200 hover:text-blue-400 after:w-0" : "text-gray-600 hover:text-blue-700 after:w-0"
     } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[3px] after:bg-blue-700 after:rounded-full after:transition-all after:duration-300`;
 
   return (
-    <nav className="h-16 bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+    <nav className="h-16 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md sticky top-0 z-50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto flex justify-between items-center h-full px-6">
         {/* Logo + Cube */}
         <div className="flex items-center gap-3">
           <RotatingCube />
-          <h1 className="text-2xl font-extrabold text-blue-700 tracking-wide">
+          <h1 className="text-2xl font-extrabold text-blue-700 dark:text-blue-400 tracking-wide">
             Internship Report
           </h1>
         </div>
@@ -135,7 +138,7 @@ function Navbar() {
               className={`relative px-3 py-2 font-medium transition-colors duration-300 flex items-center ${
                 isReportActive
                   ? "text-blue-700 after:w-full"
-                  : "text-gray-600 hover:text-blue-700 after:w-0"
+                  : darkMode ? "text-gray-200 hover:text-blue-400 after:w-0" : "text-gray-600 hover:text-blue-700 after:w-0"
               } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[3px] after:bg-blue-700 after:rounded-full after:transition-all after:duration-300`}
             >
               Report
@@ -149,7 +152,7 @@ function Navbar() {
             </button>
 
             <div
-              className={`absolute top-full left-0 mt-2 w-44 bg-white rounded-lg shadow-lg border border-blue-100 z-50 transform transition-all duration-300 origin-top ${
+              className={`absolute top-full left-0 mt-2 w-44 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-blue-100 dark:border-gray-700 z-50 transform transition-all duration-300 origin-top ${
                 reportOpen
                   ? "opacity-100 scale-y-100"
                   : "opacity-0 scale-y-0 pointer-events-none"
@@ -161,7 +164,7 @@ function Navbar() {
                   `block px-4 py-2 transition font-medium ${
                     isActive
                       ? "bg-blue-700 text-white"
-                      : "text-gray-600 hover:bg-blue-700 hover:text-white"
+                      : "text-gray-600 dark:text-gray-200 hover:bg-blue-700 hover:text-white"
                   }`
                 }
                 onClick={() => setReportOpen(false)}
@@ -174,7 +177,7 @@ function Navbar() {
                   `block px-4 py-2 transition font-medium ${
                     isActive
                       ? "bg-blue-700 text-white"
-                      : "text-gray-600 hover:bg-blue-700 hover:text-white"
+                      : "text-gray-600 dark:text-gray-200 hover:bg-blue-700 hover:text-white"
                   }`
                 }
                 onClick={() => setReportOpen(false)}
@@ -190,6 +193,19 @@ function Navbar() {
           <NavLink to="/references" className={linkClass}>
             References
           </NavLink>
+
+          {/* Dark Mode Toggle */}
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300"
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? (
+              <FaSun className="text-yellow-400 text-lg" />
+            ) : (
+              <FaMoon className="text-gray-600 text-lg" />
+            )}
+          </button>
         </div>
       </div>
     </nav>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useDarkMode } from "../context/DarkModeContext";
 
 const auroraStyles = `
   @keyframes amoeba1 {
@@ -53,33 +54,63 @@ const auroraStyles = `
     100% { transform: translate(0px, 0px) scale(1, 1); border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%; opacity: 0.45; }
   }
 
-  .amoeba1 { animation: amoeba1 7s ease-in-out infinite; }
-  .amoeba2 { animation: amoeba2 9s ease-in-out infinite; }
-  .amoeba3 { animation: amoeba3 6s ease-in-out infinite; }
-  .amoeba4 { animation: amoeba4 11s ease-in-out infinite; }
+  .amoeba1 { 
+    animation: amoeba1 7s ease-in-out infinite; 
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  .amoeba2 { 
+    animation: amoeba2 9s ease-in-out infinite; 
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  .amoeba3 { 
+    animation: amoeba3 6s ease-in-out infinite; 
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  .amoeba4 { 
+    animation: amoeba4 11s ease-in-out infinite; 
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
 `;
 
-// Shared blob color — soft bright sky blue for all 4 blobs
-const BLOB_COLOR = "radial-gradient(ellipse, #93c5fd, #60a5fa)";
-const BLOB_FILTER = "blur(90px)";
+// Light mode blob color — soft bright sky blue
+const LIGHT_BLOB_COLOR = "radial-gradient(ellipse, #93c5fd, #60a5fa)";
+const LIGHT_BLOB_FILTER = "blur(90px)";
+
+// Dark mode blob color — white with shadow (reduced opacity for performance)
+const DARK_BLOB_COLOR = "radial-gradient(ellipse, rgba(255,255,255,0.7), rgba(255,255,255,0.4))";
+const DARK_BLOB_FILTER = "blur(80px)";
 
 function AuroraBackground() {
+  const { darkMode } = useDarkMode();
+
+  const blobColor = darkMode ? DARK_BLOB_COLOR : LIGHT_BLOB_COLOR;
+  const blobFilter = darkMode ? DARK_BLOB_FILTER : LIGHT_BLOB_FILTER;
+  const blobOpacity = darkMode ? 0.5 : 0.55;
+
   return (
     <>
       <style>{auroraStyles}</style>
-      <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 0 }}>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
 
         <div className="amoeba1 absolute top-[10%] left-[5%]"
-          style={{ width: "550px", height: "480px", background: BLOB_COLOR, filter: BLOB_FILTER, opacity: 0.55, borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }} />
+          style={{ width: "550px", height: "480px", background: blobColor, filter: blobFilter, opacity: blobOpacity, borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%", boxShadow: darkMode ? "0 0 40px rgba(255,255,255,0.3)" : "none" }} />
 
         <div className="amoeba2 absolute top-[8%] right-[5%]"
-          style={{ width: "490px", height: "530px", background: BLOB_COLOR, filter: BLOB_FILTER, opacity: 0.55, borderRadius: "40% 60% 60% 40% / 70% 30% 70% 30%" }} />
+          style={{ width: "490px", height: "530px", background: blobColor, filter: blobFilter, opacity: blobOpacity, borderRadius: "40% 60% 60% 40% / 70% 30% 70% 30%", boxShadow: darkMode ? "0 0 40px rgba(255,255,255,0.3)" : "none" }} />
 
         <div className="amoeba3 absolute bottom-[10%] left-[8%]"
-          style={{ width: "570px", height: "460px", background: BLOB_COLOR, filter: BLOB_FILTER, opacity: 0.55, borderRadius: "70% 30% 50% 50% / 40% 60% 40% 60%" }} />
+          style={{ width: "570px", height: "460px", background: blobColor, filter: blobFilter, opacity: blobOpacity, borderRadius: "70% 30% 50% 50% / 40% 60% 40% 60%", boxShadow: darkMode ? "0 0 40px rgba(255,255,255,0.3)" : "none" }} />
 
         <div className="amoeba4 absolute bottom-[8%] right-[5%]"
-          style={{ width: "510px", height: "520px", background: BLOB_COLOR, filter: BLOB_FILTER, opacity: 0.55, borderRadius: "50% 50% 40% 60% / 60% 40% 60% 40%" }} />
+          style={{ width: "510px", height: "520px", background: blobColor, filter: blobFilter, opacity: blobOpacity, borderRadius: "50% 50% 40% 60% / 60% 40% 60% 40%", boxShadow: darkMode ? "0 0 40px rgba(255,255,255,0.3)" : "none" }} />
 
       </div>
     </>

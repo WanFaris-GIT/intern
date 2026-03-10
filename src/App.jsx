@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 import Home from "./pages/Home";
 import Appreciation from "./pages/Appreciation";
@@ -35,49 +36,51 @@ import Week20 from "./pages/weeks/week20";
 
 function App() {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen bg-white">
+    <DarkModeProvider>
+      <Router>
+        <div className="flex flex-col min-h-screen bg-white dark:bg-black transition-colors duration-300">
 
-        <Navbar />
+          <Navbar />
 
-        {/* MAIN CONTENT */}
-        <main className="flex-grow flex flex-col">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/appreciation" element={<Appreciation />} />
-            <Route path="/introduction" element={<Introduction />} />
-            <Route path="/company" element={<Company />} />
-            <Route path="/weekly" element={<Weekly />} />
-            <Route path="/technical" element={<Technical />} />
-            <Route path="/conclusion" element={<Conclusion />} />
-            <Route path="/references" element={<References />} />
-            <Route path="/week1" element={<Week1 />} />
-            <Route path="/week2" element={<Week2 />} />
-            <Route path="/week3" element={<Week3 />} />
-            <Route path="/week4" element={<Week4 />} />
-            <Route path="/week5" element={<Week5 />} />
-            <Route path="/week6" element={<Week6 />} />
-            <Route path="/week7" element={<Week7 />} />
-            <Route path="/week8" element={<Week8 />} />
-            <Route path="/week9" element={<Week9 />} />
-            <Route path="/week10" element={<Week10 />} />
-            <Route path="/week11" element={<Week11 />} />
-            <Route path="/week12" element={<Week12 />} />
-            <Route path="/week13" element={<Week13 />} />
-            <Route path="/week14" element={<Week14 />} />
-            <Route path="/week15" element={<Week15 />} />
-            <Route path="/week16" element={<Week16 />} />
-            <Route path="/week17" element={<Week17 />} />
-            <Route path="/week18" element={<Week18 />} />
-            <Route path="/week19" element={<Week19 />} />
-            <Route path="/week20" element={<Week20 />} />
-          </Routes>
-        </main>
+          {/* MAIN CONTENT */}
+          <main className="flex-grow flex flex-col">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/appreciation" element={<Appreciation />} />
+              <Route path="/introduction" element={<Introduction />} />
+              <Route path="/company" element={<Company />} />
+              <Route path="/weekly" element={<Weekly />} />
+              <Route path="/technical" element={<Technical />} />
+              <Route path="/conclusion" element={<Conclusion />} />
+              <Route path="/references" element={<References />} />
+              <Route path="/week1" element={<Week1 />} />
+              <Route path="/week2" element={<Week2 />} />
+              <Route path="/week3" element={<Week3 />} />
+              <Route path="/week4" element={<Week4 />} />
+              <Route path="/week5" element={<Week5 />} />
+              <Route path="/week6" element={<Week6 />} />
+              <Route path="/week7" element={<Week7 />} />
+              <Route path="/week8" element={<Week8 />} />
+              <Route path="/week9" element={<Week9 />} />
+              <Route path="/week10" element={<Week10 />} />
+              <Route path="/week11" element={<Week11 />} />
+              <Route path="/week12" element={<Week12 />} />
+              <Route path="/week13" element={<Week13 />} />
+              <Route path="/week14" element={<Week14 />} />
+              <Route path="/week15" element={<Week15 />} />
+              <Route path="/week16" element={<Week16 />} />
+              <Route path="/week17" element={<Week17 />} />
+              <Route path="/week18" element={<Week18 />} />
+              <Route path="/week19" element={<Week19 />} />
+              <Route path="/week20" element={<Week20 />} />
+            </Routes>
+          </main>
 
-        <Footer />
+          <Footer />
 
-      </div>
-    </Router>
+        </div>
+      </Router>
+    </DarkModeProvider>
   );
 }
 

@@ -1,11 +1,16 @@
+import { useDarkMode } from "../context/DarkModeContext";
 import AuroraBackground from "../components/Aurora";
 
 function Conclusion() {
+  const { darkMode } = useDarkMode();
+  
   return (
     <section
       className="relative min-h-screen py-20 px-6 overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)",
+        background: darkMode 
+          ? "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)"
+          : "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)",
       }}
     >
       {/* Aurora Animated Background */}

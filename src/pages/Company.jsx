@@ -1,3 +1,4 @@
+import { useDarkMode } from "../context/DarkModeContext";
 import React from "react";
 import HDchart from "../images/HDchart.jpg";
 import LogoHD from "../images/LogoHD.png";
@@ -17,6 +18,8 @@ import {
 } from "react-icons/fa";
 
 function Company() {
+  const { darkMode } = useDarkMode();
+  
   const services = [
     { title: "Zoom Fundraising", icon: <FaVideo /> },
     { title: "Digital Ads", icon: <FaBullhorn /> },
@@ -33,7 +36,9 @@ function Company() {
     <div
       className="min-h-screen py-20 px-6 relative overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)",
+        background: darkMode 
+          ? "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)"
+          : "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)",
       }}
     >
       {/* Aurora Background */}

@@ -1,8 +1,11 @@
+import { useDarkMode } from "../context/DarkModeContext";
 import React from "react";
 import TrainingImg from "../images/intern.jpg";
 import AuroraBackground from "../components/Aurora";
 
 function Introduction() {
+  const { darkMode } = useDarkMode();
+  
   const importancePoints = [
     {
       title: "Professional Networking",
@@ -26,7 +29,9 @@ function Introduction() {
     <section
       className="flex flex-col items-center px-6 py-20 min-h-[calc(100vh-64px)] relative overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)",
+        background: darkMode 
+          ? "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)"
+          : "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)",
       }}
     >
       {/* Aurora Background */}
