@@ -36,15 +36,15 @@ function Weekly() {
 
         <div className="text-center mb-16">
 
-          <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 drop-shadow-lg mb-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 dark:text-blue-300 drop-shadow-lg mb-4">
             Weekly Internship Summary
           </h1>
 
-          <p className="text-gray-600 text-lg">
+          <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
             Internship Duration
           </p>
 
-          <p className="text-gray-700 font-semibold">
+          <p className={`font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
             04 January 2026 – 21 May 2026
           </p>
 
@@ -59,19 +59,9 @@ function Weekly() {
 
             <Link key={w.week} to={`/week${w.week}`}>
 
-              <div className="group 
-                bg-white/30 
-                backdrop-blur-xl 
-                border border-white/40
-                rounded-3xl 
-                p-8 
-                text-center 
-                shadow-lg 
-                hover:shadow-2xl 
-                hover:-translate-y-3 
-                hover:bg-white/40
-                transition duration-300 cursor-pointer
-              ">
+              <div className={`group backdrop-blur-xl border rounded-3xl p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-3 transition duration-300 cursor-pointer ${
+                darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/40 hover:bg-white/40'
+              }`}>
 
                 {/* Icon Circle */}
 
@@ -86,7 +76,7 @@ function Weekly() {
 
                 {/* Week Title */}
 
-                <h2 className="text-xl font-bold text-blue-700 mb-2">
+                <h2 className="text-xl font-bold text-blue-700 dark:text-blue-300 mb-2">
 
                   Week {w.week}
 
@@ -95,7 +85,7 @@ function Weekly() {
 
                 {/* Description */}
 
-                <p className="text-gray-700 text-sm mb-4">
+                <p className={`text-sm mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
 
                   Internship Activity Report
 
@@ -123,9 +113,11 @@ function Weekly() {
 
         <div className="text-center mt-20">
 
-          <div className="inline-block bg-white/30 backdrop-blur-xl border border-white/40 px-8 py-4 rounded-xl shadow">
+          <div className={`inline-block backdrop-blur-xl border px-8 py-4 rounded-xl shadow ${
+            darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/40'
+          }`}>
 
-            <p className="text-gray-700 text-sm">
+            <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
               This section provides a weekly summary of activities completed
               during the internship period.
             </p>
@@ -141,3 +133,4 @@ function Weekly() {
 }
 
 export default Weekly;
+

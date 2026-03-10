@@ -20,7 +20,7 @@ function Conclusion() {
       <div className="max-w-6xl mx-auto relative" style={{ zIndex: 10 }}>
         {/* Title */}
         <div className="text-center mb-14">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 dark:text-blue-300 drop-shadow-lg">
             Conclusion
           </h1>
           <hr className="w-full border-t-4 border-blue-400 mt-6" />
@@ -28,19 +28,9 @@ function Conclusion() {
 
         {/* Glass Card */}
         <div
-          className="
-            bg-white/30
-            backdrop-blur-xl
-            border border-white/40
-            rounded-3xl
-            shadow-2xl
-            p-8 md:p-12
-            hover:shadow-blue-200
-            transition
-            text-gray-700
-            space-y-6
-            leading-relaxed
-          "
+          className={`backdrop-blur-xl border rounded-3xl shadow-2xl p-8 md:p-12 hover:shadow-blue-200 transition space-y-6 leading-relaxed ${
+            darkMode ? 'bg-gray-800/30 border-gray-600/30 text-gray-200' : 'bg-white/30 border-white/40 text-gray-700'
+          }`}
         >
           <p>
             After undergoing Industrial Training at Hit Digital Marketing Sdn. Bhd., I have delved deeper into the world of work,

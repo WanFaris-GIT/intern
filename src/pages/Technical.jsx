@@ -17,10 +17,10 @@ function Technical() {
       <AuroraBackground />
 
       <div className="max-w-6xl mx-auto relative" style={{ zIndex: 10 }}>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 text-center drop-shadow-lg mb-8">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 dark:text-blue-300 text-center drop-shadow-lg mb-8">
           Technical Report
         </h1>
-        <p className="text-gray-700 text-center text-lg">
+        <p className={`text-center text-lg ${darkMode ? 'text-gray-400' : 'text-gray-700'}`}>
           Project yang dibangunkan dan teknologi digunakan.
         </p>
       </div>

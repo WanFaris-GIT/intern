@@ -55,16 +55,9 @@ function Home() {
         {/* MAIN GLASS CARD */}
 
         <div
-          className="
-          bg-white/30
-          backdrop-blur-xl
-          border border-white/40
-          shadow-2xl
-          rounded-3xl
-          p-8 md:p-12
-          hover:shadow-blue-200
-          transition
-        "
+          className={`backdrop-blur-xl border rounded-3xl shadow-2xl p-8 md:p-12 hover:shadow-blue-200 transition ${
+            darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/40'
+          }`}
         >
           {/* Logos */}
 
@@ -109,43 +102,36 @@ function Home() {
 
             {/* PROFILE INFO */}
 
-            <div className="flex-1 space-y-4 text-gray-700 font-semibold">
+            <div className={`flex-1 space-y-4 font-semibold ${darkMode ? 'text-gray-100' : 'text-gray-700'}`}>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-blue-700">
+              <h2 className="text-2xl md:text-3xl font-bold text-blue-700 dark:text-blue-300">
                 <BlurText
                   text="WAN MUHAMMAD FARIS BIN WAN ZULKIFLI"
                   delay={80}
                 />
               </h2>
 
-              <p>(17DDT23F1014)</p>
+              <p className={darkMode ? 'text-gray-300' : ''}>(17DDT23F1014)</p>
 
-              <p>DIPLOMA INFORMATION TECHNOLOGY</p>
+              <p className={darkMode ? 'text-gray-300' : ''}>DIPLOMA INFORMATION TECHNOLOGY</p>
 
-              <p className="text-xl font-bold text-gray-800 mt-4">
+              <p className={`text-xl font-bold mt-4 ${darkMode ? 'text-gray-100' : 'text-gray-800'}`}>
                 HIT DIGITAL MARKETING SDN BHD
               </p>
 
               {/* CONTACT CARD */}
 
               <div
-                className="
-                mt-6
-                bg-white/40
-                backdrop-blur-lg
-                border border-white/40
-                rounded-2xl
-                p-6
-                space-y-4
-                shadow-inner
-              "
+                className={`mt-6 backdrop-blur-lg rounded-2xl p-6 space-y-4 shadow-inner ${
+                  darkMode ? 'bg-gray-800/40 border border-gray-600/40' : 'bg-white/40 border border-white/40'
+                }`}
               >
 
                 <div className="flex items-start gap-3 text-sm">
 
                   <FaMapMarkerAlt className="text-blue-600 mt-1" />
 
-                  <p>
+                  <p className={darkMode ? 'text-gray-300' : ''}>
                     PT 532, Tingkat 1, Seksyen 17, Lembah Sireh,
                     <br />
                     15050 Kota Bharu, Kelantan, Malaysia
@@ -155,7 +141,7 @@ function Home() {
 
                 <a
                   href="mailto:sales@hitdigital.my"
-                  className="flex items-center gap-3 text-sm hover:text-blue-700 transition"
+                  className={`flex items-center gap-3 text-sm hover:text-blue-700 transition ${darkMode ? 'text-gray-300' : ''}`}
                 >
 
                   <FaEnvelope className="text-blue-600" />
@@ -166,7 +152,7 @@ function Home() {
 
                 <a
                   href="tel:+60109056700"
-                  className="flex items-center gap-3 text-sm hover:text-blue-700 transition"
+                  className={`flex items-center gap-3 text-sm hover:text-blue-700 transition ${darkMode ? 'text-gray-300' : ''}`}
                 >
 
                   <FaPhone className="text-blue-600" />
@@ -179,7 +165,7 @@ function Home() {
                   href="https://hitdigital.my"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-3 text-sm hover:text-blue-700 transition"
+                  className={`flex items-center gap-3 text-sm hover:text-blue-700 transition ${darkMode ? 'text-gray-300' : ''}`}
                 >
 
                   <FaGlobe className="text-blue-600" />

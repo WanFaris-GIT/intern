@@ -32,12 +32,12 @@ function Appreciation() {
         </h1>
 
         {/* DEDICATION CARD */}
-        <div className="bg-white/30 backdrop-blur-xl border border-white/30 rounded-3xl shadow-xl p-8 md:p-12 mb-12 hover:shadow-blue-200 transition">
-          <h2 className="text-2xl font-bold text-blue-700 mb-6 tracking-wide">
+        <div className={`backdrop-blur-xl border rounded-3xl shadow-xl p-8 md:p-12 mb-12 hover:shadow-blue-200 transition ${darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/30'}`}>
+          <h2 className="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-6 tracking-wide">
             DEDICATIONS
           </h2>
 
-          <p className="text-gray-700 leading-loose text-justify first-letter:text-4xl first-letter:font-bold first-letter:text-blue-600">
+          <p className={`leading-loose text-justify first-letter:text-4xl first-letter:font-bold first-letter:text-blue-600 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             I offer my sincere thanks to Allah, the Almighty, the Most Gracious, and the Most Merciful, for His blessings and
             guidance that have accompanied me throughout my internship journey. His strength, persistence, and inspiration have
             given me the drive to successfully complete my six-month industrial training at Hit Digital Marketing Sdn Bhd,
@@ -54,12 +54,12 @@ function Appreciation() {
         </div>
 
         {/* APPRECIATION CARD */}
-        <div className="bg-white/30 backdrop-blur-xl border border-white/30 rounded-3xl shadow-xl p-8 md:p-12 hover:shadow-indigo-200 transition">
-          <h2 className="text-2xl font-bold text-indigo-600 mb-6 tracking-wide">
+        <div className={`backdrop-blur-xl border rounded-3xl shadow-xl p-8 md:p-12 hover:shadow-indigo-200 transition ${darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/30'}`}>
+          <h2 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-6 tracking-wide">
             APPRECIATIONS
           </h2>
 
-          <p className="text-gray-700 leading-loose text-justify first-letter:text-4xl first-letter:font-bold first-letter:text-indigo-500">
+          <p className={`leading-loose text-justify first-letter:text-4xl first-letter:font-bold first-letter:text-indigo-500 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             First and foremost, I'd like to thank Allah for directing me into this profession and allowing me to complete this
             report within the stipulated timeframe. His presence has been a consistent source of comfort and support throughout
             my academic career and industrial training, particularly during challenging periods.

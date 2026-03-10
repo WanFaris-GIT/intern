@@ -41,26 +41,19 @@ function Introduction() {
       <div className="w-full max-w-6xl mx-auto relative" style={{ zIndex: 10 }}>
 
         {/* TITLE */}
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 text-center drop-shadow-lg mb-2">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 dark:text-blue-300 text-center drop-shadow-lg mb-2">
           Introduction to Industrial Training
         </h1>
-        <p className="text-gray-600 text-center text-base md:text-lg mb-16">
+        <p className={`text-center text-base md:text-lg mb-16 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
           Understanding the concept, objectives, and importance of Industrial Training for students and professionals.
         </p>
 
         <hr className="w-full border-t-4 border-blue-400 mb-14" />
 
         {/* Grid Layout: Image + Text */}
-        <div className="
-          bg-white/30
-          backdrop-blur-xl
-          border border-white/40
-          shadow-2xl
-          rounded-3xl
-          p-8 md:p-12 mb-10
-          hover:shadow-xl hover:bg-white/40
-          transition duration-300
-        ">
+        <div className={`backdrop-blur-xl border rounded-3xl shadow-2xl p-8 md:p-12 mb-10 hover:shadow-xl transition duration-300 ${
+          darkMode ? 'bg-gray-800/30 border-gray-600/30 hover:bg-gray-800/40' : 'bg-white/30 border-white/40 hover:bg-white/40'
+        }`}>
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
             {/* Image */}
@@ -73,20 +66,20 @@ function Introduction() {
             </div>
 
             {/* Text Content */}
-            <div className="space-y-8 text-gray-700">
+            <div className={`space-y-8 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
 
               <div>
-                <h2 className="text-2xl font-bold text-blue-700 mb-3">What is Industrial Training?</h2>
+                <h2 className="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-3">What is Industrial Training?</h2>
                 <p className="text-sm md:text-base leading-relaxed">
                   Industrial training is a program designed to provide participants with practical experience and a comprehensive understanding of their chosen industry.
                   It bridges the gap between theoretical education and real-world application, enabling participants to apply their academic knowledge in a professional environment.
-                  This training is crucial for students and professionals aiming to enhance their skills, gain hands-on experience, and prepare for a successful career in their respective fields.
+                  This training is crucial for students and professionals aiming to enhance their skills experience, and prepare, gain hands-on for a successful career in their respective fields.
                 </p>
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-blue-700 mb-3">Objectives of Industrial Training</h2>
-                <ul className="list-disc list-inside space-y-2 text-sm md:text-base">
+                <h2 className="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-3">Objectives of Industrial Training</h2>
+                <ul className={`list-disc list-inside space-y-2 text-sm md:text-base ${darkMode ? 'text-gray-300' : ''}`}>
                   <li>Gain practical experience in a real industry environment.</li>
                   <li>Apply academic knowledge to solve professional tasks.</li>
                   <li>Develop soft skills such as communication and teamwork.</li>
@@ -104,19 +97,12 @@ function Introduction() {
           {importancePoints.map((point, idx) => (
             <div
               key={idx}
-              className="
-                bg-white/30
-                backdrop-blur-xl
-                border border-white/40
-                rounded-2xl
-                p-6
-                shadow-inner
-                hover:scale-105 hover:shadow-xl
-                transition-transform duration-300
-              "
+              className={`backdrop-blur-xl border rounded-2xl p-6 shadow-inner hover:scale-105 hover:shadow-xl transition-transform duration-300 ${
+                darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/40'
+              }`}
             >
-              <h3 className="text-lg font-bold text-blue-700 mb-2">{point.title}</h3>
-              <p className="text-gray-700 text-sm md:text-base">{point.desc}</p>
+              <h3 className="text-lg font-bold text-blue-700 dark:text-blue-300 mb-2">{point.title}</h3>
+              <p className={`text-sm md:text-base ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{point.desc}</p>
             </div>
           ))}
         </div>
@@ -127,3 +113,4 @@ function Introduction() {
 }
 
 export default Introduction;
+
