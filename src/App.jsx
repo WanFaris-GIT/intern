@@ -11,6 +11,7 @@ import Weekly from "./pages/Weekly";
 import Technical from "./pages/Technical";
 import Conclusion from "./pages/Conclusion";
 import References from "./pages/References";
+import ExecutiveSummary from "./pages/ExecutiveSummary";
 
 import Week1 from "./pages/weeks/week1";
 import Week2 from "./pages/weeks/week2";
@@ -46,6 +47,7 @@ function App() {
           <main className="flex-grow flex flex-col">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/executive-summary" element={<ExecutiveSummary />} />
               <Route path="/appreciation" element={<Appreciation />} />
               <Route path="/introduction" element={<Introduction />} />
               <Route path="/company" element={<Company />} />

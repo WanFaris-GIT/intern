@@ -121,12 +121,17 @@ function Navbar() {
           <NavLink to="/" className={linkClass}>
             Home
           </NavLink>
+          <NavLink to="/executive-summary" className={linkClass}>
+            Executive Summary
+          </NavLink>
+          {/* 
           <NavLink to="/appreciation" className={linkClass}>
             Appreciation
           </NavLink>
           <NavLink to="/introduction" className={linkClass}>
             Introduction
           </NavLink>
+          */}
           <NavLink to="/company" className={linkClass}>
             Company
           </NavLink>
