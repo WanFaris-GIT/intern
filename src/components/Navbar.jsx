@@ -3,7 +3,6 @@ import { NavLink, useLocation } from "react-router-dom";
 import { useDarkMode } from "../context/DarkModeContext";
 import { FaSun, FaMoon } from "react-icons/fa";
 
-/* 3D Rotating Cube Component */
 const cubeStyles = `
 .cube-scene {
   width: 28px;
@@ -48,10 +47,27 @@ const cubeStyles = `
 }
 `;
 
+const marqueeStyles = `
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-container {
+  width: 100px;
+  overflow: hidden;
+}
+.marquee-text {
+  display: inline-block;
+  animation: marquee 6s linear infinite;
+  white-space: nowrap;
+}
+`;
+
 function RotatingCube() {
   return (
     <>
       <style>{cubeStyles}</style>
+      <style>{marqueeStyles}</style>
       <div className="cube-scene">
         <div className="cube">
           <div className="cube__face cube__face--front" />
@@ -66,14 +82,12 @@ function RotatingCube() {
   );
 }
 
-/* Navbar Component */
 function Navbar() {
   const [reportOpen, setReportOpen] = useState(false);
   const dropdownRef = useRef(null);
   const location = useLocation();
   const { darkMode, toggleDarkMode } = useDarkMode();
 
-  /* Close dropdown if clicked outside */
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -84,7 +98,6 @@ function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  /* Close dropdown if navigating away from report pages, only if dropdown open */
   useEffect(() => {
     if (location.pathname !== "/weekly" && location.pathname !== "/technical") {
       const timeout = setTimeout(() => setReportOpen(false), 0);
@@ -95,7 +108,6 @@ function Navbar() {
   const isReportActive =
     location.pathname === "/weekly" || location.pathname === "/technical";
 
-  /* NavLink class helper */
   const linkClass = ({ isActive }) =>
     `relative px-3 py-2 font-medium transition-colors duration-300 cursor-pointer ${
       reportOpen
@@ -108,35 +120,27 @@ function Navbar() {
   return (
     <nav className="h-16 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md sticky top-0 z-50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto flex justify-between items-center h-full px-6">
-        {/* Logo + Cube */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-5">
           <RotatingCube />
-          <h1 className="text-2xl font-extrabold text-blue-700 dark:text-blue-700 tracking-wide">
-            Internship Report
-          </h1>
+        <div className="text-xl font-extrabold text-blue-700 dark:text-blue-700 tracking-wide flex flex-col items-start">
+          <span>INDUSTRIAL</span>
+          <span>TRAINING</span>
+        </div>
         </div>
 
-        {/* Links */}
         <div className="flex items-center space-x-6 relative">
           <NavLink to="/" className={linkClass}>
             Home
           </NavLink>
           <NavLink to="/executive-summary" className={linkClass}>
-            Executive Summary
+            <div className="marquee-container">
+              <span className="marquee-text">Executive Summary Executive Summary Executive Summary&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
           </NavLink>
-          {/* 
-          <NavLink to="/appreciation" className={linkClass}>
-            Appreciation
-          </NavLink>
-          <NavLink to="/introduction" className={linkClass}>
-            Introduction
-          </NavLink>
-          */}
           <NavLink to="/company" className={linkClass}>
             Company
           </NavLink>
 
-          {/* Report Dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setReportOpen((prev) => !prev)}
@@ -199,7 +203,6 @@ function Navbar() {
             References
           </NavLink>
 
-          {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
             className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300"
