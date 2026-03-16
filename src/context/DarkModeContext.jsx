@@ -1,24 +1,27 @@
-import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
+import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
 
 const DarkModeContext = createContext();
 
+let initialDarkMode = false;
+if (typeof window !== 'undefined') {
+  try {
+    const saved = localStorage.getItem('darkMode');
+    initialDarkMode = saved !== null ? JSON.parse(saved) : false;
+  } catch {
+    initialDarkMode = false;
+  }
+}
+
 export function DarkModeProvider({ children }) {
-  const [darkMode, setDarkMode] = useState(() => {
-    // Check localStorage for saved preference
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('darkMode');
-      if (saved !== null) {
-        return JSON.parse(saved);
-      }
-    }
-    return false;
-  });
+  const [darkMode, setDarkMode] = useState(initialDarkMode);
 
   useEffect(() => {
-    // Save preference to localStorage
+    if (typeof window === 'undefined') return;
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
-    
-    // Apply dark class to html element for Tailwind
+  }, [darkMode]);
+
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {
@@ -26,7 +29,7 @@ export function DarkModeProvider({ children }) {
     }
   }, [darkMode]);
 
-  const toggleDarkMode = useMemo(() => () => {
+  const toggleDarkMode = useCallback(() => {
     setDarkMode(prev => !prev);
   }, []);
 
