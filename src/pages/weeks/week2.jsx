@@ -1,5 +1,6 @@
 import { useDarkMode } from "../../context/DarkModeContext";
 import AuroraBackground from "../../components/Aurora";
+import BackButton from "../../components/Backbutton";
 
 function Week2() {
   const { darkMode } = useDarkMode();
@@ -18,9 +19,14 @@ function Week2() {
       <div className="max-w-6xl mx-auto px-6" style={{ position: "relative", zIndex: 10 }}>
         
         {/* Glassmorphism Card */}
-        <div className={`max-w-4xl mx-auto px-12 md:px-16 py-8 md:py-12 backdrop-blur-xl border rounded-3xl shadow-2xl hover:shadow-xl transition duration-300 card-glow ${
+        <div className={`relative max-w-4xl mx-auto px-12 md:px-24 py-8 md:py-16 backdrop-blur-xl border rounded-3xl shadow-2xl hover:shadow-xl transition duration-300 card-glow ${
           darkMode ? 'bg-gray-800/30 border-gray-600/30 hover:bg-gray-800/40' : 'bg-white/30 border-white/40 hover:bg-white/40'
         }`}>
+
+          {/* Back Button — absolute penjuru kiri atas */}
+          <div style={{ position: "absolute", top: "24px", left: "24px" }}>
+            <BackButton />
+          </div>        
           
           {/* Header */}
           <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 dark:text-blue-700 mb-2">
