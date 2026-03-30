@@ -1,7 +1,7 @@
 import { useDarkMode } from "../context/DarkModeContext";
 import React from "react";
-import HDchart from "../images/HDCHART.jpg";
-import LogoHD from "../images/LogoHD.png";
+const HDchart = new URL('../images/HDCHART.jpg', import.meta.url).href;
+const LogoHD = new URL('../images/LogoHD.png', import.meta.url).href;
 import AuroraBackground from "../components/Aurora";
 import {
   FaBullseye,
