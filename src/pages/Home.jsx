@@ -1,9 +1,9 @@
 import React from "react";
 import { useDarkMode } from "../context/DarkModeContext";
-const ProfilePic = new URL('../images/Me.jpeg', import.meta.url).href;
-const Logo1 = new URL('../images/psis.png', import.meta.url).href;
-const Logo2 = new URL('../images/LogoHD.png', import.meta.url).href;
-const Logo3 = new URL('../images/jpkk.png', import.meta.url).href;
+import ProfilePic from "../images/Me.jpeg";
+import Logo1 from "../images/psis.png";
+import Logo2 from "../images/LogoHD.png";
+import Logo3 from "../images/jpkk.png";
 import { FaEnvelope, FaPhone, FaGlobe, FaMapMarkerAlt } from "react-icons/fa";
 import AuroraBackground from "../components/Aurora";
 import BlurText from "../components/BlurText";

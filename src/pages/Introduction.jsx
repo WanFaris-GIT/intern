@@ -1,6 +1,6 @@
 import { useDarkMode } from "../context/DarkModeContext";
 import React from "react";
-const TrainingImg = new URL('../images/intern.jpg', import.meta.url).href;
+import TrainingImg from "../images/intern.jpg";
 import AuroraBackground from "../components/Aurora";
 
 function Introduction() {
