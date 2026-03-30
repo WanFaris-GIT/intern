@@ -61,28 +61,28 @@ function Home() {
         >
           {/* Logos */}
 
-          <div className="flex justify-between items-center mb-16 flex-wrap gap-6">
+          <div className="flex justify-center items-center mb-16 flex-wrap space-x-6 md:space-x-28">
 
             <img
               src={Logo1}
-              className="w-28 md:w-36 object-contain hover:scale-105 transition"
+              className="w-[122px] md:w-[154px] object-contain hover:scale-105 transition"
             />
 
             <img
               src={Logo2}
-              className="w-16 md:w-20 object-contain hover:scale-105 transition"
+              className="w-[74px] md:w-[90px] object-contain hover:scale-105 transition"
             />
 
             <img
               src={Logo3}
-              className="w-28 md:w-36 object-contain hover:scale-105 transition"
+              className="w-[122px] md:w-[154px] object-contain hover:scale-105 transition"
             />
 
           </div>
 
           {/* PROFILE SECTION */}
 
-          <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="flex flex-col md:flex-row items-start gap-12">
 
             {/* Profile Image */}
 
@@ -113,19 +113,26 @@ function Home() {
 
               <p className={darkMode ? 'text-gray-300' : ''}>(17DDT23F1014)</p>
 
-              <p className={darkMode ? 'text-gray-300' : ''}>DIPLOMA INFORMATION TECHNOLOGY</p>
+              <p className={darkMode ? 'text-gray-300' : ''}>DIPLOMA INFORMATION TECHNOLOGY (TECHNOLOGY DIGITAL)</p>
 
-              <p className={`text-xl font-bold mt-4 ${darkMode ? 'text-gray-100' : 'text-gray-800'}`}>
-                HIT DIGITAL MARKETING SDN BHD
-              </p>
+              <p className={darkMode ? 'text-gray-300' : ''}>POLITEKNIK SULTAN IDRIS SHAH</p>
+
+              <p className={darkMode ? 'text-gray-300' : ''}>(4 JAN 2026 - 21 MAY 2026)</p>
+
+              <div className="h-10"></div> {/* Spacer for gap */}
 
               {/* CONTACT CARD */}
 
               <div
+                style={{ width: '680px', maxWidth: '100%' }}
                 className={`mt-6 backdrop-blur-lg rounded-2xl p-6 space-y-4 shadow-inner ${
                   darkMode ? 'bg-gray-800/40 border border-gray-600/40' : 'bg-white/40 border border-white/40'
                 }`}
               >
+
+                <div className="text-xl font-bold text-blue-950 dark:text-blue-400 mb-4 border-b border-blue-400/50 pb-3">
+                  HIT DIGITAL MARKETING SDN BHD
+                </div>
 
                 <div className="flex items-start gap-3 text-sm">
 
