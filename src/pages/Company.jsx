@@ -1,6 +1,6 @@
 import { useDarkMode } from "../context/DarkModeContext";
 import React from "react";
-import HDchart from "../images/HDCHART.jpg";
+import HDchart from "../images/HitDigital.jpg";
 import LogoHD from "../images/LogoHD.png";
 import AuroraBackground from "../components/Aurora";
 import {
