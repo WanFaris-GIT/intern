@@ -1,5 +1,6 @@
 import { useDarkMode } from "../context/DarkModeContext";
 import AuroraBackground from "../components/Aurora";
+import StackedImageCarousel from "../components/Stackedimagecarousel";
 
 function Technical() {
   const { darkMode } = useDarkMode();
@@ -61,10 +62,16 @@ function Technical() {
               </p>
 
               <div className="flex items-center gap-6 flex-col md:flex-row">
-                <img 
-                  src="/src/images/intern.jpg" 
-                  alt="Customer Database Management"
-                  className="w-72 h-52 object-cover shadow-xl flex-shrink-0 md:w-72 md:h-52" 
+                <StackedImageCarousel
+                  images={[
+                    "/src/images/FolderDB.png",
+                    "/src/images/DATA.png",
+                    "/src/images/FileDB.png",
+                    "/src/images/DATA2.png",
+                    "/src/images/CCDB.png",
+                    "/src/images/WS_Dashboard.png",
+                  ]}
+                  alt="Database management"
                 />
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-3 text-blue-700 dark:text-blue-400">
@@ -109,10 +116,13 @@ function Technical() {
               </p>
 
               <div className="flex items-center gap-6 flex-col md:flex-row-reverse">
-                <img 
-                  src="/src/images/HitDigital.jpg" 
-                  alt="Creative Content Creation"
-                  className="w-72 h-52 object-cover shadow-xl flex-shrink-0 md:ml-6" 
+                <StackedImageCarousel
+                  images={[
+                    "/src/images/canva.png",
+                    "/src/images/Malam_Terakhir.png",
+                    "/src/images/Sedikit_Sedekah.png",
+                  ]}
+                  alt="Content creation"
                 />
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-3 text-blue-700 dark:text-blue-400">
@@ -149,7 +159,7 @@ function Technical() {
             {/* Section 3 */}
             <section>
               <h2 className={`text-2xl font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                Operation of WhatsApp Blasting System (WA Toolbox)
+                WhatsApp Blasting (WA Toolbox)
               </h2>
 
               <p className={`leading-relaxed text-sm mb-5 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
@@ -159,10 +169,13 @@ function Technical() {
               
 
               <div className="flex items-center gap-6 flex-col md:flex-row">
-                <img 
-                  src="/src/images/psis.png" 
-                  alt="WhatsApp Blasting System"
-                  className="w-72 h-52 object-cover  shadow-xl flex-shrink-0 md:w-72 md:h-52" 
+                <StackedImageCarousel
+                  images={[
+                    "/src/images/Blasting.png",
+                    "/src/images/Setup.png",
+                    "/src/images/Broadcast.png",
+                  ]}
+                  alt="WA Blasting"
                 />
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-3 text-blue-700 dark:text-blue-400">
@@ -184,11 +197,7 @@ function Technical() {
                     <li className="leading-relaxed text-sm">
                       <span className="font-semibold">Real-Time Analytical Monitoring</span>: Evaluated live campaign performance by monitoring critical key performance indicators (KPIs), 
                       including delivery rates, open rates, and system diagnostic errors.
-                    </li>
-                    <li className="leading-relaxed text-sm">
-                      <span className="font-semibold">Strategic Retargeting Initiatives</span>: Isolated non-responsive prospect lists and developed automated follow-up sequences utilizing 
-                      diversified linguistic variations. This approach successfully increased interaction metrics while strictly avoiding spam-flagging algorithms.
-                    </li>
+                    </li> 
                   </ul>
                 </div>
               </div>

@@ -1,11 +1,9 @@
-# TODO List for Technical Execution Images Task
+# TODO for Random All-Direction Slider on Technical Page
 
 ## Steps:
-- [x] Create/update TODO.md with progress tracking
-- [x] Identify suitable images from project
-- [x] Develop edit plan for Technical.jsx
-- [x] Get user approval on plan
-- [x] Edit Technical.jsx to add images left of each Technical Execution section using flex layout
-- [x] Update TODO.md to mark edits complete
-- [x] Verify changes (no command needed, refresh browser)
-- [x] Finalize completion with attempt_completion
+1. Create this TODO.md with approved plan breakdown. [x]
+2. Edit intern/src/components/Stackedimagecarousel.jsx to add 2D drag support (deltaX/deltaY), free transform top card in any direction, snap based on drag angle/distance on release. [x]
+3. Update TODO.md with completion status. [x]
+4. Test changes on Technical page. [x]
+5. attempt_completion. [ ]
+
