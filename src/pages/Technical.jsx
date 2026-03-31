@@ -2,6 +2,20 @@ import { useDarkMode } from "../context/DarkModeContext";
 import AuroraBackground from "../components/Aurora";
 import StackedImageCarousel from "../components/Stackedimagecarousel";
 
+// Import all images
+import FolderDB from "../images/FolderDB.png";
+import DATA from "../images/DATA.png";
+import FileDB from "../images/FileDB.png";
+import DATA2 from "../images/DATA2.png";
+import CCDB from "../images/CCDB.png";
+import WS_Dashboard from "../images/WS_Dashboard.png";
+import canva from "../images/canva.png";
+import Malam_Terakhir from "../images/Malam_Terakhir.png";
+import Sedikit_Sedekah from "../images/Sedikit_Sedekah.png";
+import Blasting from "../images/Blasting.png";
+import Setup from "../images/Setup.png";
+import Broadcast from "../images/Broadcast.png";
+
 function Technical() {
   const { darkMode } = useDarkMode();
 
@@ -64,12 +78,12 @@ function Technical() {
               <div className="flex items-center gap-6 flex-col md:flex-row">
                 <StackedImageCarousel
                   images={[
-                    "/src/images/FolderDB.png",
-                    "/src/images/DATA.png",
-                    "/src/images/FileDB.png",
-                    "/src/images/DATA2.png",
-                    "/src/images/CCDB.png",
-                    "/src/images/WS_Dashboard.png",
+                    FolderDB,
+                    DATA,
+                    FileDB,
+                    DATA2,
+                    CCDB,
+                    WS_Dashboard,
                   ]}
                   alt="Database management"
                 />
@@ -118,9 +132,9 @@ function Technical() {
               <div className="flex items-center gap-6 flex-col md:flex-row-reverse">
                 <StackedImageCarousel
                   images={[
-                    "/src/images/canva.png",
-                    "/src/images/Malam_Terakhir.png",
-                    "/src/images/Sedikit_Sedekah.png",
+                    canva,
+                    Malam_Terakhir,
+                    Sedikit_Sedekah,
                   ]}
                   alt="Content creation"
                 />
@@ -171,9 +185,9 @@ function Technical() {
               <div className="flex items-center gap-6 flex-col md:flex-row">
                 <StackedImageCarousel
                   images={[
-                    "/src/images/Blasting.png",
-                    "/src/images/Setup.png",
-                    "/src/images/Broadcast.png",
+                    Blasting,
+                    Setup,
+                    Broadcast,
                   ]}
                   alt="WA Blasting"
                 />
