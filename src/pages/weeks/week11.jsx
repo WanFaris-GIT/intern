@@ -47,7 +47,8 @@ function Week11() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 11, I oversaw campaign performance analysis and further refined automation scripts for content processing. Team collaboration became more seamless.
+                In this week, I conducted WhatsApp blasting manually using an auto clicker. I also faced issues with account restrictions 
+                due to third-party tools. This experience increased my awareness of compliance and risks in digital marketing practices.
             </p>
           </div>
         </div>

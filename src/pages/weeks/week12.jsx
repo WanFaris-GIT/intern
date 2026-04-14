@@ -47,7 +47,8 @@ function Week12() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 12, I led a major campaign launch and implemented full automation for routine content tasks. My technical and organizational skills were fully utilized.
+                I participated in a discussion with my supervisor to plan the final blasting strategy for a client. This helped me 
+                improve my communication, teamwork, and critical thinking skills when contributing ideas in a professional discussion.
             </p>
           </div>
         </div>

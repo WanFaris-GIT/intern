@@ -42,7 +42,9 @@ function Week13() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 13, I handled peak campaign volumes and troubleshot system issues. My automation tools proved effective in maintaining efficiency under pressure.
+                During this week, I continued executing campaigns and preparing content. I encountered technical issues such as 
+                auto-run broadcast not functioning properly, which required manual execution. This improved my adaptability 
+                and troubleshooting skills.
             </p>
           </div>
         </div>

@@ -47,7 +47,9 @@ function Week2() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 2, I began hands-on work with client data management and content organization tools. I gained familiarity with the WhatsApp blasting system and contributed to initial creative material sorting tasks.
+                In the second week, I assisted in setting up WhatsApp blasting campaigns. I learned how to organize customer contact 
+                lists, prepare message templates, and ensure proper system setup before executing campaigns. This improved my 
+                understanding of campaign preparation and accuracy in handling data.
             </p>
           </div>
         </div>

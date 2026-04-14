@@ -47,7 +47,9 @@ function Week6() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 6, I led a small WhatsApp campaign execution and refined my skills in content categorization. Feedback from the team helped me improve my workflow.
+                During this week, I worked on recording client collection data and following up with unresponsive clients. This task 
+                improved my communication skills and taught me how to interact professionally while ensuring all records were accurate 
+                and up to date.  
             </p>
           </div>
         </div>

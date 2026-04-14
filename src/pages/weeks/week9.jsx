@@ -47,7 +47,9 @@ function Week9() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 9, I optimized the campaign preparation process and handled high-volume client data sets. I also contributed ideas for automating parts of the content workflow.
+                During this week, I helped develop a new strategy to overcome restrictions on client numbers. The strategy included 
+                limiting daily broadcasts and scheduling messages in intervals. This improved my problem-solving skills and 
+                understanding of platform limitations.
             </p>
           </div>
         </div>

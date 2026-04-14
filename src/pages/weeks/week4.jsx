@@ -47,7 +47,9 @@ function Week4() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 4, I took on more responsibility in preparing WhatsApp campaigns and improved my efficiency in content organization. I also participated in team meetings to discuss ongoing projects.
+                I was involved in preparing and updating monthly client reports. This task required attention to detail and accuracy in 
+                documenting campaign performance. It enhanced my reporting skills and helped me understand how client data is analyzed 
+                and presented professionally.
             </p>
           </div>
         </div>

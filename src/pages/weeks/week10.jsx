@@ -46,7 +46,8 @@ function Week10() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 10, I successfully automated parts of the content sorting process and managed complex multi-client campaigns. My contributions were recognized by the team.
+                I was responsible for creating creative content, including posters and copywriting for campaigns. I focused on producing 
+                engaging and relevant content for target audiences, which enhanced my creativity and marketing skills.
             </p>
           </div>
         </div>

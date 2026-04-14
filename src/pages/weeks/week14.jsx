@@ -47,7 +47,9 @@ function Week14() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 14, I developed reporting dashboards for campaign metrics and continued leading team efforts in content management.
+                In this week, I managed tasks more independently, including handling client campaigns, improving content quality, 
+                and ensuring smooth execution of blasting activities. I became more confident in making decisions and solving 
+                problems efficiently.
             </p>
           </div>
         </div>

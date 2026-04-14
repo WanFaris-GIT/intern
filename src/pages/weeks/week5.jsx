@@ -47,7 +47,9 @@ function Week5() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 5, I independently handled several client data batches and WhatsApp blasts. I also suggested improvements to the content organization system based on my experience.
+                In the fifth week, I assisted in the transition of client management (PIC exchange). I handled the transfer of important 
+                information such as databases, contact numbers, emails, and system access. This experience taught me the importance of 
+                proper documentation and smooth communication during transitions.
             </p>
           </div>
         </div>

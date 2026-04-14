@@ -48,7 +48,9 @@ function Week3() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 3, I advanced in client data processing and started assisting with WhatsApp campaign preparations. I also learned more about the creative content pipeline and quality control.
+              During this week, I focused on preparing creative materials such as posters and marketing content. I also learned how to 
+              manage files properly by organizing them into structured folders, which helped improve efficiency and teamwork within 
+              the department.
             </p>
           </div>
         </div>

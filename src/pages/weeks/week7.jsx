@@ -47,7 +47,8 @@ function Week7() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 7, I collaborated on multiple campaigns and implemented some of my suggestions for the content system. My confidence in handling client data grew significantly.
+                In this week, I continued updating financial records and managing manual receipts. I ensured that all transactions were 
+                properly documented, which strengthened my attention to detail and responsibility in handling sensitive information.
             </p>
           </div>
         </div>

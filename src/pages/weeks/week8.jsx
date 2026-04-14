@@ -46,7 +46,8 @@ function Week8() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 8, I managed full campaign cycles and trained a new team member on the content system. My role expanded to include quality assurance for outgoing campaigns.
+                I was assigned to check the expiration dates of SIM cards used for client campaigns. This task was important to ensure 
+                uninterrupted WhatsApp blasting activities. I learned how technical factors can directly affect marketing performance.
             </p>
           </div>
         </div>

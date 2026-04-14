@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from "react";
 
 // Each index gets a fixed, wide rotation so back cards fan out visibly
-const ROTATIONS = [-14, 11, -18, 15, -10, 16, -12];
+const ROTATIONS = [-8, 7, -11, 9, -6, 10, -7];
 
 // Per-card x/y nudge so they peek from different directions, not just stack behind
 const OFFSETS = [
