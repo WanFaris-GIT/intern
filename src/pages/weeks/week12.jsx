@@ -98,7 +98,9 @@ function Week12() {
           
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 12, I continued working on advanced tasks. This improved my skills in handling complex responsibilities.
+                During Week 12, this week was a holiday period in conjunction with Hari Raya Aidilfitri for all 
+                staff and interns. Additionally, 19 March 2026 was observed as a public holiday (Hari Kelepasan Am) 
+                for the state of Kelantan.  
             </p>
           </div>
         </div>

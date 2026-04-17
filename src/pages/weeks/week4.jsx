@@ -7,7 +7,7 @@ function Week4() {
   const { darkMode } = useDarkMode();
   
   const images = [
-    '/images/Report,png',
+    '/images/Report.png',
     '/images/ReportKlien.png',
   ];
   

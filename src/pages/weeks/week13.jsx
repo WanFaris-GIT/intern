@@ -98,7 +98,10 @@ function Week13() {
           
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 13, I continued working on advanced tasks. This improved my skills in handling complex responsibilities.
+                  During Week 13, I resumed my tasks after the Hari Raya Aidilfitri break. These included updating 
+                  client data and implementing marketing strategies for several clients such as MPPOK, PTQGB, and MTBAM.
+                  In addition, I was involved in revising blasting strategies to address issues related to WhatsApp 
+                  account restrictions.  
             </p>
           </div>
         </div>

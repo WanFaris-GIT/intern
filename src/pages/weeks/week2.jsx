@@ -10,6 +10,7 @@ function Week2() {
     '/images/Broadcast.png',
     '/images/Template.png',
     '/images/Blasting.png',
+    '/images/Laptop.jpeg',
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -104,9 +105,9 @@ function Week2() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-                In the second week, I assisted in setting up WhatsApp blasting campaigns. I learned how to organize customer contact 
-                lists, prepare message templates, and ensure proper system setup before executing campaigns. This improved my 
-                understanding of campaign preparation and accuracy in handling data.
+                In the second week, I recorded donations received from various platforms. In addition, I assisted in preparing meeting 
+                equipment, managing and organizing files, as well as upgrading the company server by adding RAM and setting up remote 
+                desktop access. These tasks enhanced my technical skills, organizational abilities, and understanding of system maintenance.
             </p>
           </div>
         </div>

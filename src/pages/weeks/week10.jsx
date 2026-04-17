@@ -98,7 +98,10 @@ function Week10() {
           
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 10, I continued working on advanced tasks. This improved my skills in handling complex responsibilities.
+              During Week 10, I performed WhatsApp blasting tasks manually using an auto clicker. I also assisted in 
+              database management and was involved in monitoring the performance of client numbers, including 
+              handling issues related to restrictions and bans. These experiences enhanced my technical skills, 
+              attention to detail, and ability to manage real-time operational challenges.
             </p>
           </div>
         </div>

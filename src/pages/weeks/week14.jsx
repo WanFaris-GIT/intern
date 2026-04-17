@@ -102,9 +102,10 @@ function Week14() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-                In this week, I managed tasks more independently, including handling client campaigns, improving content quality, 
-                and ensuring smooth execution of blasting activities. I became more confident in making decisions and solving 
-                problems efficiently.
+                During this week, I was responsible for managing digital marketing campaigns, including designing 
+                posters, preparing copywriting, conducting message blasting activities, and updating client data 
+                and monthly reports. On 7 April 2026, I was also evaluated by Puan Ajisa as part of the industrial 
+                training student assessment process.  
             </p>
           </div>
         </div>

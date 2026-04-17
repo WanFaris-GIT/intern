@@ -98,7 +98,10 @@ function Week11() {
           
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 11, I continued working on advanced tasks. This improved my skills in handling complex responsibilities.
+                During Week 11, I carried out WhatsApp blasting tasks, managed client numbers, and monitored campaign 
+                effectiveness. In addition, I was responsible for preparing monthly reports and reviewing data. 
+                These tasks helped strengthen my analytical skills, data management, and ability to evaluate campaign 
+                performance.  
             </p>
           </div>
         </div>

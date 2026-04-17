@@ -7,8 +7,8 @@ function Week7() {
   const { darkMode } = useDarkMode();
   
   const images = [
-    '/images/week7.jpg',
-    '/images/week7.jpg'
+    '/images/ServerKT.jpeg',
+    '/images/ReportKlien.png'
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
