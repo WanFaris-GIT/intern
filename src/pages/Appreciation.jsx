@@ -48,7 +48,7 @@ function Appreciation() {
             has been my beacon of hope, lighting my path and molding me into the person I am today.
             <br /><br />
             Last but not least, I would like to acknowledge my industry supervisor at Hit Digital Marketing Sdn Bhd,
-            Encik Muhammad Afiq Bin Azahar, as well as my supervisor from Politeknik Sultan Idris Shah. Your advice, experience,
+            Encik Muhammad Afiq Bin Azahar. Your advice, experience,
             and support have been helpful throughout my internship and the preparation of this final report.
           </p>
         </div>
@@ -68,7 +68,7 @@ function Appreciation() {
             Their sacrifices and wisdom helped shape who I am today.
             <br /><br />
             Finally, I want to convey my heartfelt gratitude to my supervisor, Encik Muhammad Afiq Bin Azahar, for his advice,
-            expertise, and support throughout my six months of training. Your guidance has inspired me to try new things and
+            expertise, and support throughout my five months of training. Your guidance has inspired me to try new things and
             strive for greatness during my internship.
             <br /><br />
             I would also like to take this opportunity to sincerely apologize for any shortcomings or mistakes I may have made

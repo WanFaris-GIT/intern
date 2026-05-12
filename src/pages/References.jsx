@@ -69,18 +69,34 @@ function References() {
                   <p className="text-sm" style={{ fontSize: "0.95rem", lineHeight: 1.5 }}>
                     • HIT Digital Marketing Sdn Bhd. (2026). {convertToNodes("https://hitdigital.my")}
                   </p>
+
                   <p className="text-sm" style={{ fontSize: "0.95rem", lineHeight: 1.5 }}>
-                    • Microsoft Corporation. (2024). <em>Microsoft Excel documentation</em>.
+                    • Meta for Developers. (2026). <em>WhatsApp Business Platform documentation.</em> {" "}
+                    {convertToNodes("https://developers.facebook.com/docs/whatsapp")}
                   </p>
+
                   <p className="text-sm" style={{ fontSize: "0.95rem", lineHeight: 1.5 }}>
-                    • WhatsApp. (2025). <em>WhatsApp Business API and automation best practices</em>.
+                    • Microsoft Support. (2026). <em>Data cleansing &amp; formatting in Excel (clean, transform, and prepare data).</em> {" "}
+                    {convertToNodes("https://support.microsoft.com/excel")}
                   </p>
+
                   <p className="text-sm" style={{ fontSize: "0.95rem", lineHeight: 1.5 }}>
-                    • Chaffey, D., & Ellis-Chadwick, F. (2019). <em>Digital Marketing</em> (7th ed.). Pearson.
+                    • WA Toolbox. (2026). <em>WhatsApp bulk messaging tooling &amp; automation overview.</em> {" "}
+                    {convertToNodes("https://watoolbox.com/")}
                   </p>
+
+
                   <p className="text-sm" style={{ fontSize: "0.95rem", lineHeight: 1.5 }}>
-                    • Jabatan Pendidikan Politeknik & Kolej Komuniti, Malaysia. (2026). <em>Industrial Training Report Guide</em>.
+                    • Canva. (2026). <em>Design resources &amp; best practices for creating visual content.</em> {" "}
+                    {convertToNodes("https://www.canva.com/learn/")}
                   </p>
+
+                  <p className="text-sm" style={{ fontSize: "0.95rem", lineHeight: 1.5 }}>
+                    • Pinterest. (2026). <em>Inspiration &amp; visual discovery platform (creative content references).</em> {" "}
+                    {convertToNodes("https://www.pinterest.com/")}
+                  </p>
+
+
                 </div>
               </div>
             </section>

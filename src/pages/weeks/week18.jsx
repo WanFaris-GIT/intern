@@ -102,7 +102,10 @@ function Week18() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 18, I scaled our operations for larger campaigns and introduced predictive analytics for better targeting and performance forecasting.
+                Throughout this week, tasks were focused on preparing monthly client reports and generating new campaign ideas for WhatsApp 
+                blasting purposes. In addition, involvement in the design process of the HD Training logo was undertaken as part of the 
+                company’s branding requirements for a new project. Overall, these tasks enhanced skills in report preparation, creativity 
+                in campaign development, and basic understanding of visual design processes.
             </p>
           </div>
         </div>

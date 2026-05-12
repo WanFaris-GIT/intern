@@ -102,7 +102,10 @@ function Week17() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 17, I optimized campaign targeting using analytics insights and led the team in achieving record efficiency in content deployment.
+                During this week, activities included the development of creative content materials, database updates, and the review of 
+                donation records. Monitoring was also conducted through the WhatsApp Dashboard to ensure all information remained accurate 
+                and well-organised. Furthermore, participation in the DCM department meeting was carried out to discuss SOP-related matters, 
+                work targets, and planning for the upcoming month of May.
             </p>
           </div>
         </div>

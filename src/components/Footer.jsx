@@ -15,10 +15,13 @@ import {
 const navLinks = [
   { to: "/", label: "Home", icon: FaHome },
   { to: "/introduction", label: "Introduction", icon: FaInfoCircle },
-  { to: "/company", label: "Company", icon: FaBuilding },
-  { to: "/technical", label: "Technical", icon: FaCode },
-  { to: "/references", label: "References", icon: FaBookOpen },
+  { to: "/appreciation", label: "Appreciation", icon: FaHeart },
 ];
+
+
+
+
+
 
 function Footer() {
   const { darkMode } = useDarkMode();

@@ -107,7 +107,7 @@ function Technical() {
                       or potential client value, thereby enabling highly targeted and efficient marketing initiatives.
                     </li>
                     <li className="leading-relaxed text-sm">
-                      <span className="font-semibold">Import File Configuration</span>: Exported the authenticated and sanitized datasets into system-compatible formats (e.g., CSV) to ensure 
+                      <span className="font-semibold">Import File Configuration</span>: Exported the authenticated and sanitized datasets into system-compatible formats Excel to ensure 
                       seamless data migration and integration into the WhatsApp Blasting platform.
                     </li>
                   </ul>
@@ -161,7 +161,7 @@ function Technical() {
                     </li>
                     <li className="leading-relaxed text-sm">
                       <span className="font-semibold">Systematic Asset Management</span>: Implemented stringent directory management protocols by archiving all project outputs, source files, 
-                      and finalized assets within the organizational server or cloud storage infrastructure, adhering to standardized taxonomy.
+                      and finalized assets within the organizational server storage infrastructure.
                     </li>
                   </ul>
                 </div>
@@ -208,10 +208,6 @@ function Technical() {
                       <span className="font-semibold">Automated Scheduling and Distribution</span>: Compiled broadcast packages copywriting, hyperlinks, and media attachments. 
                       Deployments were strategically scheduled during peak engagement hours tailored to the client's specific target demographic.
                     </li>
-                    <li className="leading-relaxed text-sm">
-                      <span className="font-semibold">Real-Time Analytical Monitoring</span>: Evaluated live campaign performance by monitoring critical key performance indicators (KPIs), 
-                      including delivery rates, open rates, and system diagnostic errors.
-                    </li> 
                   </ul>
                 </div>
               </div>

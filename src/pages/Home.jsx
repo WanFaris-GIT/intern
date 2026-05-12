@@ -43,7 +43,7 @@ function Home() {
 
           <h3 className="text-xl font-bold mt-3">
             <ShinyText
-              text="SESSION 2 2025 / 2026"
+              text="SESSION ll 2025 / 2026"
               speed={4}
               className="text-blue-700"
             />

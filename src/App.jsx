@@ -12,7 +12,6 @@ import Technical from "./pages/Technical";
 import Conclusion from "./pages/Conclusion";
 import References from "./pages/References";
 import ExecutiveSummary from "./pages/ExecutiveSummary";
-
 import Week1 from "./pages/weeks/week1";
 import Week2 from "./pages/weeks/week2";
 import Week3 from "./pages/weeks/week3";

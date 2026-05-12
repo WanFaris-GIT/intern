@@ -102,7 +102,11 @@ function Week16() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 16, I integrated analytics dashboards into daily operations and mentored junior team members on best practices for campaign management.
+                Throughout this week, various tasks were completed involving database management and updates, preparation of WhatsApp 
+                blasting campaigns and marketing materials for clients, as well as the handling of related campaign assets. In addition, 
+                involvement in company asset management was carried out to ensure proper organisation and systematic storage. These tasks 
+                provided valuable exposure to data management processes, digital marketing operations, and structured asset management 
+                practices.
             </p>
           </div>
         </div>

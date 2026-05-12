@@ -102,7 +102,11 @@ function Week19() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 19, I drove innovation in campaign strategies using data-driven insights and solidified my position as a key contributor to the team.
+                During this week, tasks were primarily focused on managing and executing WhatsApp blasting strategies for several company 
+                clients. Activities included database sorting, segmentation of contact numbers into blasting batches, tagging contacts in 
+                WhatsApp Business, and setting up new blasting campaigns related to the month of Zulhijjah. In addition, interval timing 
+                strategies were reviewed to reduce the risk of account restrictions and ensure that the blasting process was conducted 
+                in a more structured and secure manner.
             </p>
           </div>
         </div>

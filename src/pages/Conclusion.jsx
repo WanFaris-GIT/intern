@@ -33,38 +33,35 @@ function Conclusion() {
           }`}
         >
           <p>
-            After undergoing Industrial Training at Hit Digital Marketing Sdn. Bhd., I have delved deeper into the world of work,
-            gaining invaluable insights and experiences. This accomplishment instils a sense of pride and gratitude for the acquired
-            knowledge, which will undoubtedly prove beneficial for my future endeavours. The training not only introduced me to new
-            concepts but also provided early exposure to the realities of the professional world.
+            After completing my Industrial Training at Hit Digital Marketing Sdn. Bhd., I understood more clearly how the real working world operates.
+            I gained useful knowledge and hands-on experience. Finishing this training makes me proud and thankful for what I learned,
+            and I believe it will help me in my future plans. Throughout the training, I was introduced to new ideas and also saw firsthand
+            what life in a professional workplace is like.
           </p>
 
           <p>
-            Furthermore, this program has offered numerous opportunities for students to expand their knowledge and skills by observing
-            the daily routines and diligent work ethic of the employees. It has heightened my awareness of the relevance of my academic
-            subjects in achieving my career aspirations. While theoretical knowledge may not always align perfectly with the practical
-            tasks during the training period, the importance of seriousness and passion in preparing for the professional world became
-            clearly evident.
+            This program also gave students the chance to grow by observing the employees’ daily routines and their disciplined work attitude.
+            I became more aware of how my academic subjects connect to my career goals. Sometimes what we learn in theory does not match
+            the practical tasks during training, but I clearly saw that being serious and having real interest are important when preparing
+            for the professional world.
           </p>
 
           <p>
-            I have gained a wealth of knowledge throughout the Industrial Training program. All the skills and insights acquired
-            during this training will be utilized to the fullest extent in my future professional endeavours. Additionally,
-            the experience has underscored the significance of responsibility, adaptability, and effective time management in executing
-            assigned tasks within a fast-paced digital marketing environment.
+            I gained a lot of knowledge during the Industrial Training period. The skills and lessons I collected will be applied as fully as possible
+            in my future career. More importantly, the experience taught me to be responsible, adapt when things change, and manage my time well
+            when handling tasks in a fast-moving digital marketing environment.
           </p>
 
           <p>
-            In conclusion, Industrial Training presents a golden opportunity for students to learn not only in academic
-            and technical domains but also in every facet of an employee's role, thereby fostering the development of highly
-            capable individuals. During the training, I experienced a real work environment and learned the importance of fostering
-            good relationships between employees and trainees, which serves to strengthen professional bonds and cultivate a
-            collaborative team spirit.
+            In summary, Industrial Training is an important opportunity for students to learn not only academically and technically, but also in the
+            different responsibilities of an employee’s role. During this period, I experienced a real workplace and learned that building good
+            relationships between employees and trainees matters. These connections help strengthen professional bonds and support teamwork
+            within the working environment.
           </p>
 
           <p>
-            I wholeheartedly recommend Hit Digital Marketing Sdn. Bhd. as an exemplary organization for industrial training.
-            I deeply appreciate the opportunity, guidance, and support provided by the company throughout my training period.
+            I strongly recommend Hit Digital Marketing Sdn. Bhd. as a good place for Industrial Training.
+            I sincerely appreciate the opportunity, guidance, and support that the company provided during my training period.
           </p>
         </div>
       </div>

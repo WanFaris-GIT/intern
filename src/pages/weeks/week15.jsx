@@ -102,7 +102,12 @@ function Week15() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During Week 15, I presented my automation solutions to management and began integrating advanced analytics into our campaign tracking system.
+              During this week, several company activities were carried out, including the Monthly Performance Review to evaluate operational 
+              achievements and current performance levels. In addition, the company also organised a Hari Raya celebration as part of employee 
+              engagement and welfare activities. At the same time, participation in the AI Essentials course was undertaken to enhance 
+              knowledge and skills in the field of artificial intelligence, along with the acquisition of a related certification. 
+              Overall, this week provided exposure to performance evaluation processes, personal development opportunities, and corporate 
+              engagement activities.  
             </p>
           </div>
         </div>
