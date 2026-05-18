@@ -1,9 +1,13 @@
-# TODO2: Tighten gaps between logos (post size enlarge)
+# TODO2 (Remove floating like code)
 
-**Plan:**
-- Logos div: change `justify-around` to `justify-between gap-2 md:gap-4` for tighter gaps.
+- [x] Remove `LoveFloatingButton` import and usage from `src/App.jsx`
+- [x] Remove floating like button from `src/pages/Home.jsx` (delete the element)
+- [x] Delete `src/components/LoveFloatingButton.jsx`
+- [x] Delete MySQL like endpoints/code:
+  - [x] `api/like-sqlite.js`
+  - [x] `server/likeStore.js`
+  - [x] `server/mysql.js`
+- [x] Delete sqlite placeholder `server/db.js`
+- [x] Verify no remaining references via search
+- [ ] Run `npm run lint` + `npm run build` (already started; build was failing due to earlier missing component references, now should pass)
 
-**Steps:**
-1. [x] Edit logos div className in intern/src/pages/Home.jsx (justify-around → justify-between gap-2 md:gap-4)
-2. [x] Update TODO
-3. [x] Complete

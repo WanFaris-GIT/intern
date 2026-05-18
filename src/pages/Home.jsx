@@ -10,7 +10,7 @@ import AuroraBackground from "../components/Aurora";
 import BlurText from "../components/BlurText";
 import GlareImage from "../components/GlareHover";
 import ShinyText from "../components/ShinyText";
-import LoveFloatingButton from "../components/LoveFloatingButton";
+
 
 function Home() {
   const { darkMode } = useDarkMode();
@@ -33,8 +33,7 @@ function Home() {
       {/* Aurora Background */}
       <AuroraBackground />
 
-      {/* floating like button */}
-      <LoveFloatingButton />
+
 
 
 
