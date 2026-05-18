@@ -66,7 +66,9 @@ export default function LoveFloatingButton() {
     if (liked) return; // toggle off disabled (per requirement)
 
     setLiked(true);
+    // start animation immediately
     setBurst(true);
+
 
     // optimistic local cache (optional)
     try {
