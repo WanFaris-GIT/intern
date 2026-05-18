@@ -1,47 +1,64 @@
-import { getDb } from "./db";
 import crypto from "crypto";
+import { ensureLikeTables, getDb } from "./mysql.js";
 
 function getClientId(req) {
   const headerId = req.headers?.["x-client-id"];
   if (typeof headerId === "string" && headerId.trim()) return headerId.trim();
 
-  const ip = req.headers?.["x-forwarded-for"];
-  if (typeof ip === "string" && ip.trim()) return ip.trim().split(",")[0].trim();
+  const xff = req.headers?.["x-forwarded-for"];
+  if (typeof xff === "string" && xff.trim()) return xff.split(",")[0].trim();
 
-  // remoteAddress may be undefined depending on runtime
   const remoteAddress = req.socket?.remoteAddress;
   if (typeof remoteAddress === "string" && remoteAddress.trim()) return remoteAddress.trim();
 
-  // fallback random id (won't dedupe across requests)
   return crypto.randomBytes(16).toString("hex");
 }
 
 export async function getLikeCount() {
-  const db = getDb();
-  const row = db
-    .prepare("SELECT like_count FROM likes WHERE id = 1")
-    .get();
-  return Number(row?.like_count ?? 0);
+  await ensureLikeTables();
+  const db = await getDb();
+  const [rows] = await db.query("SELECT like_count FROM likes WHERE id = 1 LIMIT 1");
+  const likeCount = rows?.[0]?.like_count;
+  return Number(likeCount ?? 0);
 }
 
 export async function likeOnce(req) {
-  const db = getDb();
+  await ensureLikeTables();
+  const db = await getDb();
   const clientId = getClientId(req);
 
-  // Insert event; if client_id already exists, do nothing (dedupe)
-  const insert = db
-    .prepare("INSERT OR IGNORE INTO like_events (client_id) VALUES (@client_id)");
+  const conn = await db.getConnection();
+  try {
+    await conn.beginTransaction();
 
-  const info = insert.run({ client_id: clientId });
+    // If client_id already exists, don't increment.
+    const [ins] = await conn.query(
+      "INSERT INTO like_events (client_id) VALUES (?) ON DUPLICATE KEY UPDATE client_id = client_id",
+      [clientId]
+    );
 
-  if (info && info.changes > 0) {
-    db.prepare("UPDATE likes SET like_count = like_count + 1, updated_at = datetime('now') WHERE id = 1").run();
+    // MySQL for ON DUPLICATE KEY UPDATE: affectedRows = 1 if inserted, 2 if updated.
+    const affected = ins?.affectedRows ?? 0;
+
+    if (affected === 1) {
+      await conn.query(
+        "UPDATE likes SET like_count = like_count + 1 WHERE id = 1"
+      );
+    }
+
+    const [rows] = await conn.query(
+      "SELECT like_count FROM likes WHERE id = 1 LIMIT 1"
+    );
+
+    await conn.commit();
+
+    const likeCount = rows?.[0]?.like_count;
+    return Number(likeCount ?? 0);
+  } catch (e) {
+    await conn.rollback();
+    throw e;
+  } finally {
+    conn.release();
   }
-
-  const newCount = db
-    .prepare("SELECT like_count FROM likes WHERE id = 1")
-    .get();
-
-  return Number(newCount?.like_count ?? 0);
 }
 
