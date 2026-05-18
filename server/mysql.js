@@ -1,13 +1,26 @@
 import mysql from "mysql2/promise";
 
 const {
-  DB_HOST = "127.0.0.1",
+  DB_HOST = "",
   DB_PORT = "3306",
-  DB_USER = "root",
+  DB_USER = "",
   DB_PASS = "",
-  DB_NAME = "wan_intern",
+  DB_NAME = "",
   DB_CONNECTION_LIMIT = "10",
 } = (globalThis.process?.env ?? {});
+
+function requireEnv(name, value) {
+  if (!value) {
+    throw new Error(
+      `[MySQL] Missing env ${name}. Set DB_HOST/DB_USER/DB_PASS/DB_NAME in deployment environment.`
+    );
+  }
+}
+
+requireEnv("DB_HOST", DB_HOST);
+requireEnv("DB_USER", DB_USER);
+requireEnv("DB_NAME", DB_NAME);
+
 
 
 const pool = mysql.createPool({
