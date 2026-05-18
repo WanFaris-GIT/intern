@@ -11,7 +11,14 @@ import Weekly from "./pages/Weekly";
 import Technical from "./pages/Technical";
 import Conclusion from "./pages/Conclusion";
 import References from "./pages/References";
+import Gallery from "./pages/Gallery";
+
+
+
+
+
 import ExecutiveSummary from "./pages/ExecutiveSummary";
+
 import Week1 from "./pages/weeks/week1";
 import Week2 from "./pages/weeks/week2";
 import Week3 from "./pages/weeks/week3";
@@ -54,8 +61,11 @@ function App() {
               <Route path="/technical" element={<Technical />} />
               <Route path="/conclusion" element={<Conclusion />} />
               <Route path="/references" element={<References />} />
-              <Route path="/week1" element={<Week1 />} />
+              <Route path="/gallery" element={<Gallery />} />
+
+
               <Route path="/week2" element={<Week2 />} />
+
               <Route path="/week3" element={<Week3 />} />
               <Route path="/week4" element={<Week4 />} />
               <Route path="/week5" element={<Week5 />} />

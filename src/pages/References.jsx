@@ -96,6 +96,14 @@ function References() {
                     {convertToNodes("https://www.pinterest.com/")}
                   </p>
 
+                  <p className="text-sm" style={{ fontSize: "0.95rem", lineHeight: 1.5 }}>
+                    • Reactbits. (2026). <em>React UI components &amp; visual inspiration.</em> {" "}
+                    {convertToNodes("https://reactbits.dev/")}
+                  </p>
+
+
+                	  
+
 
                 </div>
               </div>

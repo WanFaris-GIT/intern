@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import { useDarkMode } from "../context/DarkModeContext";
 import ProfilePic from "../images/Me.jpeg";
 import Logo1 from "../images/psis.png";
@@ -12,8 +13,29 @@ import ShinyText from "../components/ShinyText";
 
 function Home() {
   const { darkMode } = useDarkMode();
+
+  useEffect(() => {
+    const VISITOR_KEY = "visitorCount:landing";
+    const VISITED_FLAG = "visitorCount:landing:visited";
+
+    try {
+      // Inc sekali per browser (per device/browser)
+      const alreadyVisited = localStorage.getItem(VISITED_FLAG);
+      if (alreadyVisited) return;
+
+      const currentRaw = localStorage.getItem(VISITOR_KEY);
+      const current = Number(currentRaw);
+      const next = Number.isFinite(current) ? current + 1 : 1;
+
+      localStorage.setItem(VISITOR_KEY, String(next));
+      localStorage.setItem(VISITED_FLAG, "1");
+    } catch {
+      // ignore
+    }
+  }, []);
   
   return (
+
     <section
       className="relative flex flex-col justify-center flex-grow px-6 py-20 overflow-hidden"
       style={{
@@ -25,6 +47,28 @@ function Home() {
     >
       {/* Aurora Background */}
       <AuroraBackground />
+
+      {/* floating visitor count */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <div
+          className={`px-4 py-3 rounded-2xl shadow-lg border backdrop-blur-xl flex items-center gap-3 text-sm font-semibold transition-colors ${
+            darkMode
+              ? "bg-gray-900/40 border-gray-700/60 text-gray-100"
+              : "bg-white/50 border-blue-200/60 text-blue-900"
+          }`}
+        >
+          <div className="w-2.5 h-2.5 rounded-full bg-teal-400" />
+          <span className="text-blue-700 dark:text-teal-300">{(() => {
+            try {
+              const raw = localStorage.getItem("visitorCount:landing");
+              const n = Number(raw);
+              return Number.isFinite(n) ? n.toLocaleString() : "0";
+            } catch {
+              return "0";
+            }
+          })()}</span>
+        </div>
+      </div>
 
       {/* CONTENT */}
       <div
@@ -59,6 +103,7 @@ function Home() {
             darkMode ? 'bg-gray-800/30 border-gray-600/30' : 'bg-white/30 border-white/40'
           }`}
         >
+
           {/* Logos */}
 
           <div className="flex justify-center items-center mb-16 flex-wrap space-x-6 md:space-x-28">

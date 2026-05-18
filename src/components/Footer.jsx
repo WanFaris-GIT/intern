@@ -9,14 +9,22 @@ import {
   FaInfoCircle,
   FaBuilding,
   FaCode,
-  FaBookOpen,
+  FaImage,
 } from "react-icons/fa";
+
 
 const navLinks = [
   { to: "/", label: "Home", icon: FaHome },
   { to: "/introduction", label: "Introduction", icon: FaInfoCircle },
   { to: "/appreciation", label: "Appreciation", icon: FaHeart },
+  { to: "/gallery", label: "Gallery", icon: FaImage },
+
+
+
 ];
+
+
+
 
 
 
