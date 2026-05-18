@@ -6,7 +6,7 @@ import { useDarkMode } from "../context/DarkModeContext";
 const VISITOR_LIKE_KEY = "likeCount:landing";
 const VISITOR_LIKE_FLAG = "likeCount:landing:liked";
 
-const LIKE_API_BASE = "/api/like";
+const LIKE_API_BASE = "/api/like-sqlite";
 
 
 
