@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { FaHeart } from "react-icons/fa";
 
 import { useDarkMode } from "../context/DarkModeContext";
@@ -6,32 +6,50 @@ import { useDarkMode } from "../context/DarkModeContext";
 const VISITOR_LIKE_KEY = "likeCount:landing";
 const VISITOR_LIKE_FLAG = "likeCount:landing:liked";
 
-function clampNonNegative(n) {
-  if (!Number.isFinite(n)) return 0;
-  return Math.max(0, n);
-}
+const LIKE_API_BASE = "/api/like";
+
+
 
 export default function LoveFloatingButton() {
   const { darkMode } = useDarkMode();
   const [liked, setLiked] = useState(() => {
     try {
-      return !!localStorage.getItem(VISITOR_LIKE_FLAG);
+      return localStorage.getItem(VISITOR_LIKE_FLAG) === "1";
     } catch {
       return false;
     }
   });
 
-  const [likeCount, setLikeCount] = useState(() => {
-    try {
-      const raw = localStorage.getItem(VISITOR_LIKE_KEY);
-      const n = Number(raw);
-      return Number.isFinite(n) ? n : 0;
-    } catch {
-      return 0;
-    }
-  });
+  const [likeCount, setLikeCount] = useState(0);
+
 
   const [burst, setBurst] = useState(false);
+
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      try {
+        const res = await fetch(LIKE_API_BASE, { method: "GET" });
+        const data = await res.json();
+        if (!alive) return;
+        if (data?.ok && Number.isFinite(data.likeCount)) {
+          setLikeCount(Number(data.likeCount));
+        }
+      } catch {
+        // fallback to local cache
+        try {
+          const raw = localStorage.getItem(VISITOR_LIKE_KEY);
+          const n = Number(raw);
+          if (Number.isFinite(n) && alive) setLikeCount(n);
+        } catch {
+          // ignore
+        }
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   const containerClass = useMemo(() => {
     if (darkMode) {
@@ -50,18 +68,38 @@ export default function LoveFloatingButton() {
     setLiked(true);
     setBurst(true);
 
+    // optimistic local cache (optional)
     try {
-      const raw = localStorage.getItem(VISITOR_LIKE_KEY);
-      const current = Number(raw);
-      const next = clampNonNegative(current) + 1;
-      localStorage.setItem(VISITOR_LIKE_KEY, String(next));
       localStorage.setItem(VISITOR_LIKE_FLAG, "1");
-      setLikeCount(next);
     } catch {
-      setLikeCount((c) => c + 1);
+      // ignore
     }
 
-    window.setTimeout(() => setBurst(false), 650);
+
+    (async () => {
+      try {
+        const res = await fetch(LIKE_API_BASE, {
+          method: "POST",
+          headers: {
+            // best-effort client id for global dedupe
+            "x-client-id": `${navigator.userAgent}`,
+          },
+        });
+        const data = await res.json();
+        if (data?.ok && Number.isFinite(data.likeCount)) {
+          setLikeCount(Number(data.likeCount));
+          try {
+            localStorage.setItem(VISITOR_LIKE_KEY, String(data.likeCount));
+          } catch {
+            // ignore
+          }
+        }
+      } catch {
+        // if API fails, don't change global count, but show animation
+      } finally {
+        window.setTimeout(() => setBurst(false), 650);
+      }
+    })();
   };
 
   return (
