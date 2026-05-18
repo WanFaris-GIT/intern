@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import LoveFloatingButton from "./components/LoveFloatingButton";
 import { DarkModeProvider } from "./context/DarkModeContext";
+
 
 import Home from "./pages/Home";
 import Appreciation from "./pages/Appreciation";
@@ -50,6 +52,7 @@ function App() {
           <Navbar />
 
           {/* MAIN CONTENT */}
+          <LoveFloatingButton />
           <main className="flex-grow flex flex-col">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -96,3 +99,4 @@ function App() {
 }
 
 export default App;
+
