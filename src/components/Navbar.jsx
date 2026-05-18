@@ -41,8 +41,8 @@ function Navbar() {
 
   return (
     <nav className="h-16 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md sticky top-0 z-50 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto flex justify-between items-center h-full px-6">
-        <div className="flex items-center gap-5">
+<div className="max-w-7xl mx-auto flex justify-between items-center h-full px-4 sm:px-6 lg:px-12">
+        <div className="flex items-center gap-5 mr-20">
           <RotatingCube />
           <div className="text-xl font-extrabold text-blue-700 dark:text-blue-700 tracking-wide flex flex-col items-start">
             <p>INDUSTRIAL TRAINING</p> 
