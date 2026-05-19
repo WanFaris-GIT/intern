@@ -2,19 +2,19 @@ import { useDarkMode } from "../context/DarkModeContext";
 import AuroraBackground from "../components/Aurora";
 import StackedImageCarousel from "../components/Stackedimagecarousel";
 
-// Import all images
-import FolderDB from "../images/FolderDB.png";
-import DATA from "../images/DATA.png";
-import FileDB from "../images/FileDB.png";
-import DATA2 from "../images/DATA2.png";
-import CCDB from "../images/CCDB.png";
-import WS_Dashboard from "../images/WS_Dashboard.png";
-import canva from "../images/canva.png";
-import Malam_Terakhir from "../images/Malam_Terakhir.png";
-import Sedikit_Sedekah from "../images/Sedikit_Sedekah.png";
-import Blasting from "../images/Blasting.png";
-import Setup from "../images/Setup.png";
-import Broadcast from "../images/Broadcast.png";
+// Images from public folder (Vite serves /public at root)
+const FolderDB = "/images/FolderDB.png";
+const DATA = "/images/DATA.png";
+const FileDB = "/images/FileDB.png";
+const DATA2 = "/images/DATA2.png";
+const CCDB = "/images/CCDB.png";
+const WS_Dashboard = "/images/WS_Dashboard.png";
+const canva = "/images/canva.png";
+const Malam_Terakhir = "/images/Malam_Terakhir.png";
+const Sedikit_Sedekah = "/images/Sedikit_Sedekah.png";
+const Blasting = "/images/Blasting.png";
+const Setup = "/images/Setup.png";
+const Broadcast = "/images/Broadcast.png";
 
 function Technical() {
   const { darkMode } = useDarkMode();
@@ -237,4 +237,5 @@ function Technical() {
 }
 
 export default Technical;
+
 

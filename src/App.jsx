@@ -65,6 +65,7 @@ function App() {
               <Route path="/references" element={<References />} />
               <Route path="/gallery" element={<Gallery />} />
 
+              <Route path="/week1" element={<Week1 />} />
 
               <Route path="/week2" element={<Week2 />} />
 

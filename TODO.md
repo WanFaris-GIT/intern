@@ -1,15 +1,9 @@
-# TODO (Love count - MySQL migration)
+# TODO
+- [x] Diagnose punca kenapa gambar Technical (WhatsApp Blasting) nampak hanya 1/3
+- [x] Edit `src/components/Stackedimagecarousel.jsx` supaya semua kad gambar boleh dilihat (jangan hide card terakhir)
 
-- [x] Cari code yang berkaitan dengan love count & animation
-- [x] Kenal pasti endpoint yang UI gunakan (GET/POST /api/like-sqlite)
-- [x] Tukar backend love count daripada SQLite/in-memory kepada MySQL
-- [x] Buat connection pool MySQL (`server/mysql.js`)
-- [x] Buat logic Like store MySQL (`server/likeStore.js`)
-- [x] Tukar endpoint `api/like-sqlite.js` supaya gunakan MySQL (supaya UI kekal boleh jalan)
-- [x] Buang code sqlite lama (`server/db.js` jadi placeholder)
-- [x] Buang dependency sqlite (`npm uninstall better-sqlite3`)
-- [x] Buang API in-memory tidak digunakan (`api/like.js`, `api/like-global.js`)
-- [ ] Konfigurasi env MySQL (DB_HOST/DB_USER/DB_PASS/DB_NAME/DB_PORT)
-- [ ] Jalankan app & test: count bertambah selepas click (dedupe ikut client_id)
-
+- [ ] Kurangkan card jadi terlalu kecil/opacity rendah untuk banyak item
+- [ ] Buat saiz container responsif (elak cropping/clip)
+- [ ] Jalankan `npm run dev` dan semak page `/technical`
+- [ ] (Jika perlu) tweak CSS/transform untuk stack lebih kemas
 

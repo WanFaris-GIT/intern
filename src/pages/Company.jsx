@@ -1,7 +1,8 @@
 import { useDarkMode } from "../context/DarkModeContext";
 import React from "react";
-import HDchart from "../images/HitDigital.jpg";
-import LogoHD from "../images/LogoHD.png";
+// Images from public folder (Vite serves /public at root)
+const HDchart = "/images/HitDigital.jpg";
+const LogoHD = "/images/LogoHD.png";
 import AuroraBackground from "../components/Aurora";
 import {
   FaBullseye,
@@ -194,3 +195,4 @@ function Company() {
 }
 
 export default Company;
+

@@ -1,6 +1,7 @@
 import { useDarkMode } from "../context/DarkModeContext";
 import React from "react";
-import TrainingImg from "../images/intern.jpg";
+// Images from public folder (Vite serves /public at root)
+const TrainingImg = "/images/intern.jpg";
 import AuroraBackground from "../components/Aurora";
 
 function Introduction() {

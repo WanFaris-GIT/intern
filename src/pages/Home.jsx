@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 
 import { useDarkMode } from "../context/DarkModeContext";
-import ProfilePic from "../images/Me.jpeg";
-import Logo1 from "../images/psis.png";
-import Logo2 from "../images/LogoHD.png";
-import Logo3 from "../images/jpkk.png";
+// Images from public folder (Vite serves /public at root)
+const ProfilePic = "/images/Me.jpeg";
+const Logo1 = "/images/psis.png";
+const Logo2 = "/images/LogoHD.png";
+const Logo3 = "/images/jpkk.png";
 import { FaEnvelope, FaPhone, FaGlobe, FaMapMarkerAlt } from "react-icons/fa";
 import AuroraBackground from "../components/Aurora";
 import BlurText from "../components/BlurText";
