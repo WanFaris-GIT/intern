@@ -1,23 +1,29 @@
 import { useDarkMode } from "../context/DarkModeContext";
 import AuroraBackground from "../components/Aurora";
 import StackedImageCarousel from "../components/Stackedimagecarousel";
+import React from "react";
 
-// Images from public folder (Vite serves /public at root)
-const FolderDB = "/images/FolderDB.png";
-const DATA = "/images/DATA.png";
-const FileDB = "/images/FileDB.png";
-const DATA2 = "/images/DATA2.png";
-const CCDB = "/images/CCDB.png";
-const WS_Dashboard = "/images/WS_Dashboard.png";
-const canva = "/images/canva.png";
-const Malam_Terakhir = "/images/Malam_Terakhir.png";
-const Sedikit_Sedekah = "/images/Sedikit_Sedekah.png";
-const Blasting = "/images/Blasting.png";
-const Setup = "/images/Setup.png";
-const Broadcast = "/images/Broadcast.png";
+// Use images directly from public/images
+const IMAGE_PATHS = {
+  FolderDB: "/images/StructureFolder.png",
+  // slide 2 should use DATA.png
+  DATA: "/images/DATA.png",
+  FileDB: "/images/FileDB.png",
+  DATA2: "/images/DATA2.png",
+  CCDB: "/images/CCDB.png",
+  WS_Dashboard: "/images/WS_Dashboard.png",
+  canva: "/images/canva.png",
+  Malam_Terakhir: "/images/MalamTerakhir.png",
+  Sedikit_Sedekah: "/images/Sedikit_Sedekah.png",
+  Blasting: "/images/Blasting.png",
+  Setup: "/images/Setup.png",
+  Broadcast: "/images/Broadcast.png",
+};
 
 function Technical() {
   const { darkMode } = useDarkMode();
+  // Use public images paths
+  const images = IMAGE_PATHS;
 
   return (
     <div className="min-h-screen py-20 px-6 relative overflow-hidden"
@@ -78,12 +84,12 @@ function Technical() {
               <div className="flex items-center gap-6 flex-col md:flex-row">
                 <StackedImageCarousel
                   images={[
-                    FolderDB,
-                    DATA,
-                    FileDB,
-                    DATA2,
-                    CCDB,
-                    WS_Dashboard,
+                    images.FolderDB,
+                    images.DATA,
+                    images.FileDB,
+                    images.DATA2,
+                    images.CCDB,
+                    images.WS_Dashboard,
                   ]}
                   alt="Database management"
                 />
@@ -132,9 +138,9 @@ function Technical() {
               <div className="flex items-center gap-6 flex-col md:flex-row-reverse">
                 <StackedImageCarousel
                   images={[
-                    canva,
-                    Malam_Terakhir,
-                    Sedikit_Sedekah,
+                    images.canva,
+                    images.Malam_Terakhir,
+                    images.Sedikit_Sedekah,
                   ]}
                   alt="Content creation"
                 />
@@ -185,9 +191,9 @@ function Technical() {
               <div className="flex items-center gap-6 flex-col md:flex-row">
                 <StackedImageCarousel
                   images={[
-                    Blasting,
-                    Setup,
-                    Broadcast,
+                    images.Blasting,
+                    images.Setup,
+                    images.Broadcast,
                   ]}
                   alt="WA Blasting"
                 />

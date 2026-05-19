@@ -206,8 +206,6 @@ function StackedImageCarousel({ images = [] }) {
           />
         ))}
       </div>
-
-      <p className="text-xs text-gray-400">drag to browse</p>
     </div>
   );
 }
