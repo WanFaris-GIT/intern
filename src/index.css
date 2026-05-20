@@ -13,6 +13,13 @@ body {
   padding: 0;
 }
 
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Glow in the Dark Effects for Dark Mode */
 .dark .glow-text {
   text-shadow:

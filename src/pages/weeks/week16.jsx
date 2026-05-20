@@ -2,8 +2,10 @@ import { useDarkMode } from "../../context/DarkModeContext";
 import { useState, useEffect } from "react";
 import AuroraBackground from "../../components/Aurora";
 import BackButton from "../../components/Backbutton";
+import { useNavigate } from "react-router-dom";
 
 function Week16() {
+  const navigate = useNavigate();
   const { darkMode } = useDarkMode();
   
   const images = [
@@ -45,6 +47,47 @@ function Week16() {
           {/* Back Button — absolute penjuru kiri atas */}
           <div style={{ position: "absolute", top: "24px", left: "24px" }}>
             <BackButton />
+          </div>
+
+          {/* Next Week Button */}
+          <div style={{ position: "absolute", top: "24px", right: "24px" }}>
+            <button
+              onClick={() => navigate("/week17")}
+              aria-label="Next week"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "44px",
+                height: "44px",
+                borderRadius: "50%",
+                border: "none",
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+                outline: "none",
+                userSelect: "none",
+                background: darkMode ? "#1e1e2e" : "#e8edf5",
+                color: darkMode ? "#a5b4fc" : "#4f6ef7",
+                boxShadow: darkMode
+                  ? "5px 5px 12px #0d0d1a, -5px -5px 12px #6366f1"
+                  : "5px 5px 12px #c8cdd8, -5px -5px 12px #ffffff",
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
 
           {/* Header */}

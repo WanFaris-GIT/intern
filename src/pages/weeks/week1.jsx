@@ -2,7 +2,7 @@ import { useDarkMode } from "../../context/DarkModeContext";
 import { useState, useEffect } from "react";
 import AuroraBackground from "../../components/Aurora";
 import BackButton from "../../components/Backbutton";
-
+import NextWeekButton from "../../components/NextWeekButton";
 
 function Week1() {
   const { darkMode } = useDarkMode();
@@ -47,6 +47,9 @@ function Week1() {
           <div style={{ position: "absolute", top: "24px", left: "24px" }}>
             <BackButton />
           </div>
+
+          <NextWeekButton to="/week2" />
+
 
           {/* Header */}
           <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 dark:text-blue-700 mb-2">

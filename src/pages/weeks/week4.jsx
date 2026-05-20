@@ -2,33 +2,35 @@ import { useDarkMode } from "../../context/DarkModeContext";
 import AuroraBackground from "../../components/Aurora";
 import BackButton from "../../components/Backbutton";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Week4() {
   const { darkMode } = useDarkMode();
-  
+  const navigate = useNavigate();
+
   const images = [
-    '/images/Report.png',
-    '/images/ReportKlien.png',
+    "/images/Report.png",
+    "/images/ReportKlien.png",
   ];
-  
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isPaused) {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
       }
     }, 5000); // Auto scroll every 5 seconds
-  
+
     return () => clearInterval(interval);
   }, [isPaused, images.length]);
-  
+
   return (
     <section
       className="relative flex flex-col justify-center flex-grow px-6 py-20 overflow-hidden"
       style={{
-        background: darkMode 
+        background: darkMode
           ? "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)"
           : "linear-gradient(135deg, #eef2ff 0%, #ede9fe 50%, #faf5ff 100%)",
       }}
@@ -36,35 +38,81 @@ function Week4() {
       <AuroraBackground />
 
       <div className="max-w-6xl mx-auto px-6" style={{ position: "relative", zIndex: 10 }}>
-        
         {/* Glassmorphism Card */}
-        <div className={`relative max-w-4xl mx-auto px-12 md:px-24 py-8 md:py-16 backdrop-blur-xl border rounded-3xl shadow-2xl hover:shadow-xl transition duration-300 card-glow ${
-          darkMode ? 'bg-gray-800/30 border-gray-600/30 hover:bg-gray-800/40' : 'bg-white/30 border-white/40 hover:bg-white/40'
-        }`}>
-
+        <div
+          className={`relative max-w-4xl mx-auto px-12 md:px-24 py-8 md:py-16 backdrop-blur-xl border rounded-3xl shadow-2xl hover:shadow-xl transition duration-300 card-glow ${
+            darkMode
+              ? "bg-gray-800/30 border-gray-600/30 hover:bg-gray-800/40"
+              : "bg-white/30 border-white/40 hover:bg-white/40"
+          }`}
+        >
           {/* Back Button — absolute penjuru kiri atas */}
           <div style={{ position: "absolute", top: "24px", left: "24px" }}>
             <BackButton />
+          </div>
+
+          {/* Next Week Button */}
+          <div style={{ position: "absolute", top: "24px", right: "24px" }}>
+            <button
+              onClick={() => navigate("/week5")}
+              aria-label="Next week"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "44px",
+                height: "44px",
+                borderRadius: "50%",
+                border: "none",
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+                outline: "none",
+                userSelect: "none",
+                background: darkMode ? "#1e1e2e" : "#e8edf5",
+                color: darkMode ? "#a5b4fc" : "#4f6ef7",
+                boxShadow: darkMode
+                  ? "5px 5px 12px #0d0d1a, -5px -5px 12px #6366f1"
+                  : "5px 5px 12px #c8cdd8, -5px -5px 12px #ffffff",
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
 
           {/* Header */}
           <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 dark:text-blue-700 mb-2">
             Week 4
           </h1>
-          
-          <p className={`text-lg mb-8 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+
+          <p className={`text-lg mb-8 ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
             25 January 2026 - 29 January 2026
           </p>
-          
+
           <div className="flex flex-col items-center mb-8 w-full max-w-lg mx-auto">
-            <div 
+            <div
               className="relative w-full h-64 md:h-72 lg:h-80 rounded-2xl shadow-2xl overflow-hidden cursor-pointer hover:shadow-3xl transition-shadow"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              <div className="flex h-full transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+              <div
+                className="flex h-full transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
                 {images.map((src, idx) => (
-                  <img 
+                  <img
                     key={idx}
                     src={src}
                     alt={`Week 4 Image ${idx + 1}`}
@@ -72,9 +120,11 @@ function Week4() {
                   />
                 ))}
               </div>
-              {/* Navigation buttons */}
+              {/* Navigation buttons (carousel images) */}
               <button
-                onClick={() => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)}
+                onClick={() =>
+                  setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+                }
                 className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-200 opacity-80 hover:opacity-100 z-10"
                 aria-label="Previous image"
               >
@@ -93,19 +143,23 @@ function Week4() {
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${idx === currentIndex ? 'bg-blue-600 scale-125 shadow-md' : 'bg-gray-400 hover:bg-gray-500 hover:scale-110'}`}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
+                    idx === currentIndex
+                      ? "bg-blue-600 scale-125 shadow-md"
+                      : "bg-gray-400 hover:bg-gray-500 hover:scale-110"
+                  }`}
                   aria-label={`Go to image ${idx + 1}`}
                 />
               ))}
             </div>
           </div>
-          
+
           {/* Content */}
-          <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
+          <div className={`${darkMode ? "text-gray-200" : "text-gray-700"}`}>
             <p className="text-lg leading-relaxed">
-                I was involved in preparing and updating monthly client reports. This task required attention to detail and accuracy in 
-                documenting campaign performance. It enhanced my reporting skills and helped me understand how client data is analyzed 
-                and presented professionally.
+              I was involved in preparing and updating monthly client reports. This task required attention to
+              detail and accuracy in documenting campaign performance. It enhanced my reporting skills and helped
+              me understand how client data is analyzed and presented professionally.
             </p>
           </div>
         </div>

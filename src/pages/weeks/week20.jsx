@@ -102,7 +102,13 @@ function Week20() {
           {/* Content */}
           <div className={`${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
             <p className="text-lg leading-relaxed">
-              During the final Week 20, I completed the internship with successful project deliveries, comprehensive system improvements, and valuable experience in digital campaign management.
+                During the final week of the industrial training, various tasks were carried out such as conducting 
+                WhatsApp blasting using an auto clicker, recording daily blasting numbers, and attending the Database 
+                Department Meeting. In addition, participation in the Monthly Performance Review conducted in a hybrid 
+                mode provided exposure to the company’s performance evaluation and current developments. 
+                This week also marked the final day of the industrial training, which involved the handover of final 
+                tasks and the removal of company-related data from a personal laptop according to the established 
+                procedures.
             </p>
           </div>
         </div>
@@ -112,4 +118,5 @@ function Week20() {
 }
 
 export default Week20;
+
 

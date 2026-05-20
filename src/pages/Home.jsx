@@ -74,37 +74,35 @@ function Home() {
 
           {/* Logos */}
 
-          <div className="flex justify-center items-center mb-16 flex-wrap space-x-6 md:space-x-28">
-
+          <div className="flex flex-wrap justify-center items-center gap-6 mb-16">
             <img
               src={Logo1}
-              className="w-[122px] md:w-[154px] object-contain hover:scale-105 transition"
+              className="w-28 md:w-36 object-contain hover:scale-105 transition"
             />
 
             <img
               src={Logo2}
-              className="w-[74px] md:w-[90px] object-contain hover:scale-105 transition"
+              className="w-20 md:w-24 object-contain hover:scale-105 transition"
             />
 
             <img
               src={Logo3}
-              className="w-[122px] md:w-[154px] object-contain hover:scale-105 transition"
+              className="w-28 md:w-36 object-contain hover:scale-105 transition"
             />
-
           </div>
 
           {/* PROFILE SECTION */}
 
-          <div className="flex flex-col md:flex-row items-start gap-12">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
 
             {/* Profile Image */}
 
-            <div className="relative">
+            <div className="relative flex-shrink-0">
 
               <GlareImage
                 src={ProfilePic}
                 alt="Profile"
-                className="w-64 h-64 rounded-full object-cover border-4 border-blue-600 shadow-xl"
+                className="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-blue-600 shadow-xl"
               />
 
               {/* Glow effect */}
@@ -137,8 +135,7 @@ function Home() {
               {/* CONTACT CARD */}
 
               <div
-                style={{ width: '680px', maxWidth: '100%' }}
-                className={`mt-6 backdrop-blur-lg rounded-2xl p-6 space-y-4 shadow-inner ${
+                className={`mt-6 w-full max-w-3xl backdrop-blur-lg rounded-2xl p-6 space-y-4 shadow-inner ${
                   darkMode ? 'bg-gray-800/40 border border-gray-600/40' : 'bg-white/40 border border-white/40'
                 }`}
               >
