@@ -9,8 +9,11 @@ function Week16() {
   const { darkMode } = useDarkMode();
   
   const images = [
-    '/images/week16.jpg',
-    '/images/week16.jpg'
+    "images/Blasting.png",
+    "images/Broadcast.png",
+    "/images/Asset1.png",
+    "/images/Asset2.png",
+    "/images/Asset3.png",
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -111,7 +114,7 @@ function Week16() {
                     key={idx}
                     src={src}
                     alt={`Week 16 Image ${idx + 1}`}
-                    className="w-full h-full flex-shrink-0 object-cover"
+                    className="w-full h-full flex-shrink-0 object-contain bg-black"
                   />
                 ))}
               </div>

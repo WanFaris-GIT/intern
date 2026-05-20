@@ -8,7 +8,7 @@ function Week10() {
   const { darkMode } = useDarkMode();
   const navigate = useNavigate();
 
-  const images = ["/images/week10.jpg", "/images/week10.jpg"];
+  const images = ["/images/AC1.png", "/images/AC2.jpeg", "/images/AC3.jpeg"];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -83,7 +83,12 @@ function Week10() {
             >
               <div className="flex h-full transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                 {images.map((src, idx) => (
-                  <img key={idx} src={src} alt={`Week 10 Image ${idx + 1}`} className="w-full h-full flex-shrink-0 object-cover" />
+                  <img
+                    key={idx}
+                    src={src}
+                    alt={`Week 10 Image ${idx + 1}`}
+                    className="w-full h-full flex-shrink-0 object-contain bg-black"
+                  />
                 ))}
               </div>
 

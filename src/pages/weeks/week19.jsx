@@ -9,8 +9,9 @@ function Week19() {
   const { darkMode } = useDarkMode();
   
   const images = [
-    '/images/week19.jpg',
-    '/images/week19.jpg'
+    "/images/Template2.png",
+    "/images/List.png",
+    "/images/Zulhijjah.png",
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,9 +30,8 @@ function Week19() {
   const navigate = useNavigate();
 
   return (
-<section
-      className="relative flex flex-col flex-grow min-h-0 px-6 overflow-hidden"
-
+    <section
+      className="relative flex flex-col justify-center flex-grow px-6 py-20 overflow-hidden"
       style={{
         background: darkMode 
           ? "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)"
@@ -141,7 +141,7 @@ function Week19() {
                     key={idx}
                     src={src}
                     alt={`Week 19 Image ${idx + 1}`}
-                    className="w-full h-full flex-shrink-0 object-cover"
+                    className="w-full h-full flex-shrink-0 object-contain bg-black"
                   />
                 ))}
               </div>

@@ -113,7 +113,7 @@ function Week5() {
                     key={idx}
                     src={src}
                     alt={`Week 5 Image ${idx + 1}`}
-                    className="w-full h-full flex-shrink-0 object-cover"
+                    className="w-full h-full flex-shrink-0 object-contain bg-black"
                   />
                 ))}
               </div>

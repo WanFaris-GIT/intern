@@ -33,16 +33,16 @@ function Conclusion() {
           }`}
         >
           <p>
-            After completing my Industrial Training at Hit Digital Marketing Sdn. Bhd., I understood more clearly how the real working world operates.
-            I gained useful knowledge and hands-on experience. Finishing this training makes me proud and thankful for what I learned,
-            and I believe it will help me in my future plans. Throughout the training, I was introduced to new ideas and also saw firsthand
-            what life in a professional workplace is like.
+            After completing my Industrial Training at Hit Digital Marketing Sdn. Bhd., I understood more clearly how the real working world operated.
+            I gained useful knowledge and hands-on experience. Finishing this training made me proud and thankful for what I learned,
+            and I believed it would help me in my future plans. Throughout the training, I was introduced to new ideas and also saw firsthand
+            what life in a professional workplace was like.
           </p>
 
           <p>
             This program also gave students the chance to grow by observing the employees’ daily routines and their disciplined work attitude.
-            I became more aware of how my academic subjects connect to my career goals. Sometimes what we learn in theory does not match
-            the practical tasks during training, but I clearly saw that being serious and having real interest are important when preparing
+            I became more aware of how my academic subjects connected to my career goals. Sometimes what we learned in theory did not match
+            the practical tasks during training, but I clearly saw that being serious and having real interest was important when preparing
             for the professional world.
           </p>
 
@@ -55,7 +55,7 @@ function Conclusion() {
           <p>
             In summary, Industrial Training is an important opportunity for students to learn not only academically and technically, but also in the
             different responsibilities of an employee’s role. During this period, I experienced a real workplace and learned that building good
-            relationships between employees and trainees matters. These connections help strengthen professional bonds and support teamwork
+            relationships between employees and trainees mattered. These connections helped strengthen professional bonds and supported teamwork
             within the working environment.
           </p>
 

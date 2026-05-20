@@ -7,8 +7,9 @@ function Week20() {
   const { darkMode } = useDarkMode();
   
   const images = [
-    '/images/week20.jpg',
-    '/images/week20.jpg'
+    "images/AC2.jpeg",
+    "images/WS_Dashboard.png",
+    "/images/MPRHybrid.png",
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -68,7 +69,7 @@ function Week20() {
                     key={idx}
                     src={src}
                     alt={`Week 20 Image ${idx + 1}`}
-                    className="w-full h-full flex-shrink-0 object-cover"
+                    className="w-full h-full flex-shrink-0 object-contain bg-black"
                   />
                 ))}
               </div>

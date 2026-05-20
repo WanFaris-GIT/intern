@@ -90,7 +90,7 @@ function Week6() {
             >
               <div className="flex h-full transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                 {images.map((src, idx) => (
-                  <img key={idx} src={src} alt={`Week 6 Image ${idx + 1}`} className="w-full h-full flex-shrink-0 object-cover" />
+                  <img key={idx} src={src} alt={`Week 6 Image ${idx + 1}`} className="w-full h-full flex-shrink-0 object-contain bg-black" />
                 ))}
               </div>
 

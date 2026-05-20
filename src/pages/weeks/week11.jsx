@@ -8,7 +8,7 @@ function Week11() {
   const { darkMode } = useDarkMode();
   const navigate = useNavigate();
 
-  const images = ["/images/week11.jpg", "/images/week11.jpg"];
+  const images = ["/images/NoClient.png", "/images/NoBlurr.png"];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -66,7 +66,7 @@ function Week11() {
             >
               <div className="flex h-full transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                 {images.map((src, idx) => (
-                  <img key={idx} src={src} alt={`Week 11 Image ${idx + 1}`} className="w-full h-full flex-shrink-0 object-cover" />
+                  <img key={idx} src={src} alt={`Week 11 Image ${idx + 1}`} className="w-full h-full flex-shrink-0 object-contain bg-black" />
                 ))}
               </div>
               <button onClick={() => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)}

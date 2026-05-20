@@ -9,8 +9,8 @@ function Week13() {
   const navigate = useNavigate();
   
   const images = [
-    '/images/week13.jpg',
-    '/images/week13.jpg'
+    "/images/WS_Dashboard.png",
+    "/images/Folder.png"
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -108,7 +108,7 @@ function Week13() {
                     key={idx}
                     src={src}
                     alt={`Week 13 Image ${idx + 1}`}
-                    className="w-full h-full flex-shrink-0 object-cover"
+                    className="w-full h-full flex-shrink-0 object-contain bg-black"
                   />
                 ))}
               </div>
