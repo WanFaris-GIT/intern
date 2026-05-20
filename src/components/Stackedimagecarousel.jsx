@@ -129,10 +129,10 @@ function StackedImageCarousel({ images = [] }) {
   if (!images.length) return null;
 
   return (
-    <div className="flex flex-col items-center gap-3 select-none flex-shrink-0">
+    <div className="flex flex-col items-center gap-3 select-none flex-shrink-0 w-full max-w-[420px]">
       <div
-        className="relative cursor-grab active:cursor-grabbing"
-        style={{ width: 420, height: 320, padding: "35px", overflow: "visible" }}
+        className="relative cursor-grab active:cursor-grabbing w-full"
+        style={{ paddingTop: "72%", overflow: "visible" }}
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}
@@ -158,12 +158,8 @@ function StackedImageCarousel({ images = [] }) {
           return (
             <div
               key={i}
-              className="absolute overflow-hidden shadow-xl border border-white/20"
+              className="absolute inset-0 overflow-hidden shadow-xl border border-white/20"
               style={{
-                width: 330,
-                height: 235,
-                top: 0,
-                left: 0,
                 transformOrigin: "center center",
                 ...getStyle(i),
               }}
