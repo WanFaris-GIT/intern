@@ -78,6 +78,11 @@ const auroraStyles = `
     transform: translateZ(0);
     backface-visibility: hidden;
   }
+  @media (prefers-reduced-motion: reduce) {
+    .amoeba1, .amoeba2, .amoeba3, .amoeba4 {
+      animation: none !important;
+    }
+  }
 `;
 
 // Light mode blob color — soft bright sky blue

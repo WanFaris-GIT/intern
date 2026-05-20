@@ -19,20 +19,21 @@ const images = [
   { src: "/images/p16.jpeg", alt: "Gallery 16" }
 ];
 
-
 export default function Gallery() {
+  const lowPowerMode = typeof window !== 'undefined' && window.matchMedia('(max-width: 900px), (prefers-reduced-motion: reduce)').matches;
+  const gallerySegments = lowPowerMode ? 16 : 22;
+
   return (
-<div className="min-h-screen w-screen px-0">
-<div className="w-full h-screen">
-
-<div className="w-full h-full bg-black/5">
-<div className="w-full h-full">
-              <GlobeDomeGallery images={images} segments={35} fit={0.58} grayscale={false} />
-            </div>
-          </div>
-
-
-
+    <div className="min-h-screen w-screen px-0">
+      <div className="w-full h-screen bg-black/5">
+        <div className="w-full h-full">
+          <GlobeDomeGallery
+            images={images}
+            segments={gallerySegments}
+            fit={0.58}
+            grayscale={false}
+          />
+        </div>
       </div>
     </div>
   );

@@ -35,7 +35,7 @@ const DEFAULTS = {
   maxVerticalRotationDeg: 5,
   dragSensitivity: 20,
   enlargeTransitionMs: 300,
-  segments: 35
+  segments: 24
 };
 
 const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
@@ -107,7 +107,7 @@ export default function GlobeDomeGallery({
   maxRadius = Infinity,
   padFactor = 0.25,
   overlayBlurColor = '#131196',
-  galleryPadPx = 8,
+  galleryPadPx = 15,
   maxVerticalRotationDeg = DEFAULTS.maxVerticalRotationDeg,
   dragSensitivity = DEFAULTS.dragSensitivity,
   enlargeTransitionMs = DEFAULTS.enlargeTransitionMs,
@@ -116,7 +116,7 @@ export default function GlobeDomeGallery({
 
   openedImageWidth = '520px',
   openedImageHeight = '520px',
-  imageBorderRadius = '10px',
+  imageBorderRadius = '30px',
   openedImageBorderRadius = '30px',
   grayscale = true
 }) {
@@ -155,7 +155,9 @@ export default function GlobeDomeGallery({
     document.body.classList.remove('dg-scroll-lock');
   }, []);
 
-  const items = useMemo(() => buildItems(images, segments), [images, segments]);
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce), (max-width: 900px)').matches;
+  const effectiveSegments = prefersReducedMotion ? Math.min(segments, 18) : segments;
+  const items = useMemo(() => buildItems(images, effectiveSegments), [images, effectiveSegments]);
 
   const applyTransform = (xDeg, yDeg) => {
     const el = sphereRef.current;

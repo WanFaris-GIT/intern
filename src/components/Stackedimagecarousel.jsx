@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 
 const ROTATIONS = [-8, 7, -11, 9, -6, 10, -7];
 
@@ -14,13 +14,14 @@ const OFFSETS = [
 
 function StackedImageCarousel({ images = [] }) {
   const [current, setCurrent] = useState(0);
-  const [dragDeltaX, setDragDeltaX] = useState(0);
-  const [dragDeltaY, setDragDeltaY] = useState(0);
+  const [dragForce, setDragForce] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
 
   const startX = useRef(0);
   const startY = useRef(0);
-  const lastTime = useRef(0);
+  const dragDeltaRef = useRef({ x: 0, y: 0 });
+  const animationFrameRef = useRef(null);
+  const isDraggingRef = useRef(false);
 
   const N = images.length;
 
@@ -29,10 +30,11 @@ function StackedImageCarousel({ images = [] }) {
 
   const getStyle = (i) => {
     const rel = (i - current + N) % N;
+    const drag = isDragging ? dragForce : { x: 0, y: 0 };
 
     if (rel === 0) {
-      const dx = isDragging ? dragDeltaX : 0;
-      const dy = isDragging ? dragDeltaY : 0;
+      const dx = drag.x;
+      const dy = drag.y;
       return {
         transform: `translate(${dx}px, ${dy}px) rotate(${dx * 0.02 + dy * 0.02}deg) scale(1)`,
         zIndex: N,
@@ -46,18 +48,11 @@ function StackedImageCarousel({ images = [] }) {
     const depth = Math.min(rel, 4);
     const rot = ROTATIONS[i % ROTATIONS.length];
     const off = OFFSETS[i % OFFSETS.length];
-
-    // Jangan treat card paling belakang secara khas (rel === N-1).
-    // Sebab bila jumlah item tertentu, card ini mudah jadi terlalu kecil/opacity rendah lalu nampak seolah-olah “hilang”.
-    // Biarkan semua card ikut formula depth yang sama.
-    const dragInfluenceX = dragDeltaX * 0.1;
-    const dragInfluenceY = dragDeltaY * 0.1;
-
-    // Kurangkan “loss” visual untuk rel yang jauh supaya card tak nampak hilang bila N berubah (contoh 5 item: 1/5 nampak)
+    const dragInfluenceX = drag.x * 0.1;
+    const dragInfluenceY = drag.y * 0.1;
     const scaledRot = rot * (0.35 + depth * 0.25);
     const scaledX = (off.x + dragInfluenceX) * (0.45 + depth * 0.18);
     const scaledY = (off.y + dragInfluenceY) * (0.45 + depth * 0.18);
-
     const scale = Math.max(0.92, 1 - depth * 0.025);
     const opacity = Math.max(0.78, 1 - depth * 0.07);
 
@@ -69,62 +64,92 @@ function StackedImageCarousel({ images = [] }) {
     };
   };
 
-  const onMouseDown = (e) => {
+  const tickDrag = () => {
+    if (!isDraggingRef.current) return;
+    const drag = dragDeltaRef.current;
+    setDragForce({ x: drag.x, y: drag.y });
+    animationFrameRef.current = requestAnimationFrame(tickDrag);
+  };
+
+  const startDrag = (x, y) => {
     setIsDragging(true);
-    startX.current = e.clientX;
-    startY.current = e.clientY;
-    lastTime.current = Date.now();
-    setDragDeltaX(0);
-    setDragDeltaY(0);
+    isDraggingRef.current = true;
+    startX.current = x;
+    startY.current = y;
+    dragDeltaRef.current = { x: 0, y: 0 };
+    setDragForce({ x: 0, y: 0 });
+    if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current);
+    animationFrameRef.current = requestAnimationFrame(tickDrag);
   };
 
-  const onMouseMove = (e) => {
-    if (!isDragging) return;
-    setDragDeltaX(e.clientX - startX.current);
-    setDragDeltaY(e.clientY - startY.current);
-  };
+  const finishDrag = () => {
+    if (!isDraggingRef.current) return;
+    isDraggingRef.current = false;
+    setIsDragging(false);
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
+    }
 
-  const onMouseUp = () => {
-    if (!isDragging) return;
-
-    const dist = Math.sqrt(dragDeltaX ** 2 + dragDeltaY ** 2);
+    const { x, y } = dragDeltaRef.current;
+    const dist = Math.sqrt(x * x + y * y);
     if (dist > 60) {
-      const angle = Math.atan2(dragDeltaY, dragDeltaX);
-      if (
-        angle > 0.785 ||
-        angle < -0.785 ||
-        angle > 2.356 ||
-        angle < -2.356
-      ) {
+      const angle = Math.atan2(y, x);
+      if (angle > 0.785 || angle < -0.785 || angle > 2.356 || angle < -2.356) {
         advance();
       } else {
         retreat();
       }
     }
 
-    setIsDragging(false);
-    setDragDeltaX(0);
-    setDragDeltaY(0);
+    dragDeltaRef.current = { x: 0, y: 0 };
+    setDragForce({ x: 0, y: 0 });
+  };
+
+  const onMouseDown = (e) => {
+    startDrag(e.clientX, e.clientY);
+  };
+
+  const onMouseMove = (e) => {
+    if (!isDraggingRef.current) return;
+    dragDeltaRef.current = {
+      x: e.clientX - startX.current,
+      y: e.clientY - startY.current,
+    };
+  };
+
+  const onMouseUp = () => {
+    finishDrag();
   };
 
   const onTouchStart = (e) => {
-    setIsDragging(true);
-    startX.current = e.touches[0].clientX;
-    startY.current = e.touches[0].clientY;
-    lastTime.current = Date.now();
-    setDragDeltaX(0);
-    setDragDeltaY(0);
+    const touch = e.touches[0];
+    if (!touch) return;
+    startDrag(touch.clientX, touch.clientY);
   };
 
   const onTouchMove = (e) => {
-    if (!isDragging) return;
-    setDragDeltaX(e.touches[0].clientX - startX.current);
-    setDragDeltaY(e.touches[0].clientY - startY.current);
+    if (!isDraggingRef.current) return;
+    const touch = e.touches[0];
+    if (!touch) return;
+    dragDeltaRef.current = {
+      x: touch.clientX - startX.current,
+      y: touch.clientY - startY.current,
+    };
   };
 
   const onTouchEnd = () => {
-    onMouseUp();
+    finishDrag();
   };
+
+  useEffect(() => {
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
+    };
+  }, []);
 
   if (!images.length) return null;
 

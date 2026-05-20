@@ -42,6 +42,11 @@ const cubeStyles = `
   border-radius: 50%;
   box-shadow: 0 0 4px #60a5fa, 20px 0 4px #60a5fa, 0 20px 4px #60a5fa, 20px 20px 4px #60a5fa;
 }
+@media (prefers-reduced-motion: reduce) {
+  .cube {
+    animation: none !important;
+  }
+}
 `;
 
 const marqueeStyles = `
@@ -57,6 +62,11 @@ const marqueeStyles = `
   display: inline-block;
   animation: marquee 6s linear infinite;
   white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-text {
+    animation: none !important;
+  }
 }
 `;
 

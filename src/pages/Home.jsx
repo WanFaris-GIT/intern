@@ -74,7 +74,7 @@ function Home() {
 
           {/* Logos */}
 
-          <div className="flex flex-wrap justify-center items-center gap-6 mb-16">
+          <div className="flex flex-wrap justify-around items-center gap-6 mb-16">
             <img
               src={Logo1}
               className="w-28 md:w-36 object-contain hover:scale-105 transition"

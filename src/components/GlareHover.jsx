@@ -1,16 +1,20 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 function GlareImage({ src, alt, className }) {
   const cardRef = useRef(null);
   const glareRef = useRef(null);
+  const rafRef = useRef(null);
+  const pointerRef = useRef({ x: 0, y: 0 });
 
-  const handleMouseMove = (e) => {
+  const updateGlare = () => {
+    rafRef.current = null;
     const card = cardRef.current;
     const glare = glareRef.current;
-    const rect = card.getBoundingClientRect();
+    if (!card || !glare) return;
 
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const rect = card.getBoundingClientRect();
+    const x = pointerRef.current.x - rect.left;
+    const y = pointerRef.current.y - rect.top;
 
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
@@ -26,12 +30,33 @@ function GlareImage({ src, alt, className }) {
     glare.style.opacity = "1";
   };
 
+  const handleMouseMove = (e) => {
+    pointerRef.current = { x: e.clientX, y: e.clientY };
+    if (rafRef.current) return;
+    rafRef.current = requestAnimationFrame(updateGlare);
+  };
+
   const handleMouseLeave = () => {
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+    }
     const card = cardRef.current;
     const glare = glareRef.current;
+    if (!card || !glare) return;
+
     card.style.transform = `perspective(600px) rotateX(0deg) rotateY(0deg) scale(1)`;
     glare.style.opacity = "0";
   };
+
+  useEffect(() => {
+    return () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    };
+  }, []);
 
   return (
     <div
