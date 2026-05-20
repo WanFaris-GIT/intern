@@ -47,12 +47,13 @@ function App() {
   return (
     <DarkModeProvider>
       <Router>
-        <div className="flex flex-col min-h-screen bg-white dark:bg-black transition-colors duration-300">
+<div className="flex flex-col min-h-[100dvh] bg-white dark:bg-black transition-colors duration-300">
 
           <Navbar />
 
           {/* MAIN CONTENT */}
-          <main className="flex-grow flex flex-col">
+          <main className="flex-grow flex flex-col min-h-0">
+
             <Suspense fallback={<div className="flex-grow flex items-center justify-center py-20 text-gray-600 dark:text-gray-300">Loading...</div>}>
               <Routes>
                 <Route path="/" element={<Home />} />

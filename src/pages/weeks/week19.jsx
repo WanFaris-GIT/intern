@@ -29,8 +29,9 @@ function Week19() {
   const navigate = useNavigate();
 
   return (
-    <section
-      className="relative flex flex-col justify-center flex-grow px-6 py-20 overflow-hidden"
+<section
+      className="relative flex flex-col flex-grow min-h-0 px-6 overflow-hidden"
+
       style={{
         background: darkMode 
           ? "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)"
